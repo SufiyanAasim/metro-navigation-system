@@ -1,0 +1,224 @@
+Trip 2:
+Starting Destination: Millennium Mall
+Final Station: Millennium Mall
+Distance: 0 km
+Time: 3:51 PM
+Date: Saturday, 28 December 2024
+
+Trip 3:
+Starting Destination: Defence Morr
+Final Station: Shaan Chowrangi
+Distance: 1 km
+Time: 3:51 PM
+Date: Saturday, 28 December 2024
+
+Trip 4:
+Starting Destination: Shaan Chowrangi
+Final Station: Frere Hall
+Distance: 3 km
+Time: 3:51 PM
+Date: Saturday, 28 December 2024
+
+Trip 5:
+Starting Destination: Shaan Chowrangi
+Final Station: Singer Chowrangi
+Distance: 3 km
+Time: 3:51 PM
+Date: Saturday, 28 December 2024
+
+Trip 6:
+Starting Destination: Singer Chowrangi
+Final Station: Defence Morr
+Distance: 2 km
+Time: 3:53 PM
+Date: Saturday, 28 December 2024
+
+Trip 7:
+Starting Destination: FTC
+Final Station: Millennium Mall
+Distance: 2 km
+Time: 6:16 PM
+Date: Saturday, 28 December 2024
+
+Trip 8:
+Starting Destination: Frere Hall
+Final Station: Indus Hospital
+Distance: 3 km
+Time: 6:17 PM
+Date: Saturday, 28 December 2024
+
+Trip 9:
+Starting Destination: Numaish
+Final Station: Rahat Park
+Distance: 2 km
+Time: 7:44 PM
+Date: Saturday, 28 December 2024
+
+Trip 10:
+Starting Destination: Millennium Mall
+Final Station: Numaish
+Distance: 3 km
+Time: 8:30 PM
+Date: Saturday, 28 December 2024
+
+Trip 11:
+Starting Destination: Singer Chowrangi
+Final Station: Millennium Mall
+Distance: 2 km
+Time: 9:00 PM
+Date: Saturday, 28 December 2024
+
+Trip 12:
+Starting Destination: Drigh Road
+Final Station: Millennium Mall
+Distance: 1 km
+Time: 9:01 PM
+Date: Saturday, 28 December 2024
+
+Trip 13:
+Starting Destination: Numaish
+Final Station: Millennium Mall
+Distance: 4 km
+Time: 9:40 PM
+Date: Saturday, 28 December 2024
+
+Trip 14:
+Starting Destination: FTC
+Final Station: Singer Chowrangi
+Distance: 2 km
+Time: 10:21 AM
+Date: Sunday, 29 December 2024
+
+Trip 15:
+Starting Destination: FTC
+Final Station: Shaan Chowrangi
+Distance: 6 km
+Time: 11:45 AM
+Date: Sunday, 29 December 2024
+
+Trip 16:
+Starting Destination: Drigh Road
+Final Station: Shaan Chowrangi
+Distance: 7 km
+Time: 11:45 AM
+Date: Sunday, 29 December 2024
+
+Trip 17:
+Starting Destination: Millennium Mall
+Final Station: Shaan Chowrangi
+Distance: 9 km
+Time: 11:48 AM
+Date: Sunday, 29 December 2024
+
+Trip 18:
+Starting Destination: Defence Morr
+Final Station: Drigh Road
+Distance: 5 km
+Time: 11:51 AM
+Date: Sunday, 29 December 2024
+
+Trip 19:
+Starting Destination: Defence Morr
+Final Station: Indus Hospital
+Distance: 1 km
+Time: 1:02 PM
+Date: Sunday, 29 December 2024
+
+Trip 20:
+Starting Destination: FTC
+Final Station: Shaan Chowrangi
+Distance: 6 km
+Time: 1:05 PM
+Date: Sunday, 29 December 2024
+
+Trip 21:
+Starting Destination: Numaish
+Final Station: Millennium Mall
+Distance: 12 km
+Time: 1:12 PM
+Date: Sunday, 29 December 2024
+
+Trip 22:
+Starting Destination: Millennium Mall
+Final Station: Frere Hall
+Distance: 10 km
+Time: 1:14 PM
+Date: Sunday, 29 December 2024
+
+Trip 23:
+Starting Destination: FTC
+Final Station: Defence Morr
+Distance: 4 km
+Time: 1:19 PM
+Date: Sunday, 29 December 2024
+
+Trip 24:
+Starting Destination: Millennium Mall
+Final Station: Defence Morr
+Distance: 7 km
+Time: 8:18 PM
+Date: Sunday, 29 December 2024
+
+Trip 25:
+Starting Destination: Defence Morr
+Final Station: Frere Hall
+Distance: 3 km
+Time: 8:19 PM
+Date: Sunday, 29 December 2024
+
+Trip 26:
+Starting Destination: Millennium Mall
+Final Station: FTC
+Distance: 5 km
+Time: 8:22 PM
+Date: Sunday, 29 December 2024
+
+Trip 27:
+Starting Destination: Numaish
+Final Station: Millennium Mall
+Distance: 12 km
+Time: 8:36 PM
+Date: Sunday, 29 December 2024
+
+Trip 28:
+Starting Destination: Frere Hall
+Final Station: Indus Hospital
+Distance: 4 km
+Time: 8:37 PM
+Date: Sunday, 29 December 2024
+
+Trip 29:
+Starting Destination: Millennium Mall
+Final Station: Indus Hospital
+Distance: 6 km
+Time: 9:03 PM
+Date: Sunday, 29 December 2024
+
+Trip 30:
+Starting Destination: Millennium Mall
+Final Station: Indus Hospital
+Distance: 6 km
+Time: 9:07 PM
+Date: Sunday, 29 December 2024
+
+Trip 31:
+Starting Destination: Frere Hall
+Final Station: Rahat Park
+Distance: 1 km
+Time: 9:08 PM
+Date: Sunday, 29 December 2024
+
+Trip 32:
+Starting Destination: Frere Hall
+Final Station: Rahat Park
+Distance: 1 km
+Time: 9:08 PM
+Date: Sunday, 29 December 2024
+
+Trip 33:
+Starting Destination: Millennium Mall
+Final Station: FTC
+Distance: 5 km
+Time: 9:16 PM
+Date: Sunday, 29 December 2024
+

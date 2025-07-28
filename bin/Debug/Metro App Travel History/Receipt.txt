@@ -1,0 +1,69 @@
+Date: 12/28/2024 12:54:00 PM
+Start Station: Drigh Road
+End Station: Defence Morr
+Distance: 12 meters
+
+Date: 12/28/2024 12:59:15 PM
+Start Station: Millennium Mall
+End Station: Rahat Park
+Distance: 7 meters
+
+Date: 12/28/2024 1:05:57 PM
+Start Station: Frere Hall
+End Station: Millennium Mall
+Distance: 10 meters
+
+Date: 12/28/2024 1:16:33 PM
+Start Station: Millennium Mall
+End Station: Drigh Road
+Distance: 1 meters
+
+Date: 12/28/2024 1:17:17 PM
+Start Station: Numaish
+End Station: Millennium Mall
+Distance: 4 meters
+
+Date: 12/28/2024 1:18:23 PM
+Start Station: Drigh Road
+End Station: Shaan Chowrangi
+Distance: 2 meters
+
+Date: 12/28/2024 1:51:40 PM
+Start Station: Millennium Mall
+End Station: Indus Hospital
+Distance: 4 meters
+
+Date: 12/28/2024 1:57:51 PM
+Start Station: Millennium Mall
+End Station: Shaan Chowrangi
+Distance: 3 meters
+
+Date: 12/28/2024 1:58:38 PM
+Start Station: Shaan Chowrangi
+End Station: Millennium Mall
+Distance: 4 meters
+
+Trip !:
+Starting Destination: Indus Hospital
+Final Station: Numaish
+Time: 3:18 PM
+Date: Saturday, 28 December 2024
+
+Trip !:
+Starting Destination: Numaish
+Final Station: Rahat Park
+Time: 3:23 PM
+Date: Saturday, 28 December 2024
+
+Trip !:
+Starting Destination: Numaish
+Final Station: Rahat Park
+Time: 3:23 PM
+Date: Saturday, 28 December 2024
+
+Trip !:
+Starting Destination: Defence Morr
+Final Station: Rahat Park
+Time: 3:26 PM
+Date: Saturday, 28 December 2024
+
