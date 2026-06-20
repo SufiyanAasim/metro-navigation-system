@@ -155,7 +155,7 @@
     <value>..\Resources\Picsart_24-12-27_14-36-10-672.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="start__button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\start  button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\start button.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Picsart_24_12_27_14_34_56_363" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Picsart_24-12-27_14-34-56-363.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

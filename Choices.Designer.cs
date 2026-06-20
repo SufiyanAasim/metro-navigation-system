@@ -119,7 +119,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 18);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Show Metro App";
+            this.label3.Text = "Find the shortest path";
             // 
             // label4
             // 
@@ -130,7 +130,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(147, 18);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Find the shotest Path";
+            this.label4.Text = "View the metro map";
             // 
             // Choices
             // 

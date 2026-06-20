@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Metro_App.Frontend;
 
 namespace Metro_App
 {
@@ -13,34 +14,21 @@ namespace Metro_App
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Set form properties and size adjustments
-            int formWidth = this.ClientSize.Width + this.Width - this.ClientSize.Width;
-            int formHeight = this.ClientSize.Height + this.Height - this.ClientSize.Height;
-            this.Size = new Size(formWidth, formHeight);
+            int formWidth = ClientSize.Width + Width - ClientSize.Width;
+            int formHeight = ClientSize.Height + Height - ClientSize.Height;
 
-            // Optional: Set form properties to make it non-resizable
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-        //ignore    
+            Size = new Size(formWidth, formHeight);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
-        {     // Srart Button
-            Choices choicesForm = new Choices();
-            this.Hide();
-            choicesForm.Show();
-
-
+        {
+            FormNavigator.ShowNext(this, new Choices());
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            //ignore
-
         }
     }
 }
