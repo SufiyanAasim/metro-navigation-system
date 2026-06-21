@@ -135,6 +135,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include=".gitignore" />
+    <None Include="LICENSE" />
     <None Include="README.md" />
     <None Include=".github\workflows\backend.yml" />
     <None Include=".github\workflows\frontend.yml" />
