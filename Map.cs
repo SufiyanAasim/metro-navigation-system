@@ -9,6 +9,7 @@ namespace Metro_App
         public Map()
         {
             InitializeComponent();
+            FormClosing += (s, e) => Application.Exit();
         }
 
         private void Map_Load(object sender, EventArgs e)

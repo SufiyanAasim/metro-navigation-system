@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using Metro_App.Backend;
+using Metro_App.Frontend;
 
 namespace Metro_App
 {
@@ -9,14 +10,14 @@ namespace Metro_App
         public ReceiptGeneration()
         {
             InitializeComponent();
+            FormClosing += (s, e) => Application.Exit();
             richTextBox1.Visible = false;
             richTextBox1.ReadOnly = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Thank you for using Metro Navigation System.");
-            Application.Exit();
+            FormNavigator.ShowNext(this, new Choices());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,6 +31,7 @@ namespace Metro_App
 
             richTextBox1.Text = receiptContent;
             richTextBox1.Visible = true;
+            button3.Text = "Main Menu";
         }
 
         private void ReceiptGeneration_Load(object sender, EventArgs e)

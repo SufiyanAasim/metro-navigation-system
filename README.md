@@ -6,9 +6,9 @@ A Windows desktop application for navigating the Karachi Metro network. Built wi
 
 - **Shortest Path Finder** — select any two stations and get the optimal route with total distance
 - **Interactive Metro Map** — visual map of the Karachi Metro network
-- **Trip Receipt Generation** — auto-generates and saves a receipt for every trip
+- **Trip Receipt Generation** — auto-generates and saves a receipt for every trip, with options to return to the main menu
 - **Travel History** — persists all trips locally with date, time, and route details
-- **Station Browser** — browse all stations on the network
+- **Station Browser** — browse all stations on the network, with an interactive dropdown selection that highlights and checks station markers directly on the map
 
 ## Metro Network
 

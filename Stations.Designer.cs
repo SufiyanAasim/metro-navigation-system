@@ -1,4 +1,4 @@
-﻿namespace Metro_App
+namespace Metro_App
 {
     partial class Stations
     {
@@ -67,7 +67,7 @@
             "Shaan Chowrangi",
             "Defence Morr",
             "Indus Hospital",
-            "Rahat Park",
+            "KPT Interchange",
             "Singer Chowrangi",
             "FTC"});
             this.comboBox1.Location = new System.Drawing.Point(12, 12);

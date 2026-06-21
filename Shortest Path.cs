@@ -13,6 +13,7 @@ namespace Metro_App
         public Shortest_Path()
         {
             InitializeComponent();
+            FormClosing += (s, e) => Application.Exit();
         }
 
         private bool ShowShortestRoute(int start, int end)
