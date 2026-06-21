@@ -95,4 +95,4 @@ Both workflows run on `windows-latest`.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE) © 2026 M Sufiyan Aasim ([@msufiyanpk](https://github.com/msufiyanpk)).
+This project is licensed under the [MIT License](LICENSE).
