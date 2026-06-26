@@ -2,7 +2,7 @@
 # Usage: .\package-release.ps1 -Version "1.0.0"
 
 param (
-    [string]$Version = "1.0.0"
+    [string]$Version = "1.1.5"
 )
 
 $ErrorActionPreference = "Stop"
@@ -48,7 +48,7 @@ foreach ($file in $filesToCopy) {
 }
 
 # Copy optional root documentation
-$docs = @("LICENSE", "README.md", "RELEASE_NOTES.md")
+$docs = @("LICENSE", "README.md", "RELEASE_NOTES.md", "CHANGELOG.md", "ABOUT.md")
 foreach ($doc in $docs) {
     $docPath = Join-Path $PSScriptRoot $doc
     if (Test-Path $docPath) {

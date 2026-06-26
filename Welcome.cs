@@ -10,6 +10,7 @@ namespace Metro_App
         public Welcome()
         {
             InitializeComponent();
+            this.Icon = global::Metro_App.Properties.Resources.metro_app_icon;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -24,7 +25,14 @@ namespace Metro_App
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            SoundHelper.PlayTap();
             FormNavigator.ShowNext(this, new Choices());
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            SoundHelper.PlayTap();
+            Application.Exit();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -13,6 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,14 +49,33 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="System.Resources.Extensions" Condition="Exists('$(MSBuildToolsPath)\System.Resources.Extensions.dll')">
-      <HintPath>$(MSBuildToolsPath)\System.Resources.Extensions.dll</HintPath>
+    <Reference Include="System.Resources.Extensions">
+      <HintPath>System.Resources.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Backend\MetroNetwork.cs" />
-    <Compile Include="Backend\TripHistoryService.cs" />
-    <Compile Include="Frontend\FormNavigator.cs" />
+    <Compile Include="MetroNetwork.cs" />
+    <Compile Include="TripHistoryService.cs" />
+    <Compile Include="FormNavigator.cs" />
+    <Compile Include="SoundHelper.cs" />
+    <Compile Include="Credits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Credits.Designer.cs">
+      <DependentUpon>Credits.cs</DependentUpon>
+    </Compile>
     <Compile Include="Map.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,13 +167,12 @@
     <None Include="Resources\background.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Picsart_24-12-23_20-49-48-491.jpg" />
+    <None Include="Resources\credits_bg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\metro map.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\start button.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Picsart_24-12-27_14-37-54-787.jpg" />
@@ -190,7 +209,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="metro app icon.ico" />
-    <None Include="Resources\Screenshot 2024-12-30 013836.png" />
+    <None Include="Resources\btn_back.png" />
+    <None Include="Resources\btn_developer_credits.png" />
+    <None Include="Resources\btn_exit.png" />
+    <None Include="Resources\btn_find.png" />
+    <None Include="Resources\btn_metro_map.png" />
+    <None Include="Resources\btn_next.png" />
+    <None Include="Resources\btn_no.png" />
+    <None Include="Resources\btn_shortest_route.png" />
+    <None Include="Resources\btn_show_stations_on_map.png" />
+    <None Include="Resources\btn_start.png" />
+    <None Include="Resources\btn_stations.png" />
+    <None Include="Resources\btn_yes.png" />
+    <None Include="Resources\credits_bg.png" />
+    <None Include="Resources\developer_credits_bg.png" />
+    <None Include="Resources\dot_highlight_station.png" />
+    <None Include="Resources\metro_app_icon.png" />
+    <None Include="Resources\metro_app_icon.ico" />
+    <None Include="Resources\options_bg.png" />
+    <None Include="Resources\receipt_generation_bg.png" />
+    <None Include="Resources\report_bg.png" />
+    <None Include="Resources\welcome_bg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <PackageReference Include="System.Resources.Extensions" Version="4.6.0" />
+  </ItemGroup>
 </Project>

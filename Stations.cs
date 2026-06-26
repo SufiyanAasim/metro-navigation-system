@@ -9,12 +9,52 @@ namespace Metro_App
         public Stations()
         {
             InitializeComponent();
+            this.Icon = global::Metro_App.Properties.Resources.metro_app_icon;
             FormClosing += (s, e) => Application.Exit();
+
+            // Set parent to pictureBox1 for correct transparency over the map
+            button1.Parent = pictureBox1;
+            button2.Parent = pictureBox1;
+            buttonNext.Parent = pictureBox1;
+
+            radioButton1.Parent = pictureBox1;
+            radioButton2.Parent = pictureBox1;
+            radioButton3.Parent = pictureBox1;
+            radioButton4.Parent = pictureBox1;
+            radioButton5.Parent = pictureBox1;
+            radioButton6.Parent = pictureBox1;
+            radioButton7.Parent = pictureBox1;
+            radioButton8.Parent = pictureBox1;
+            radioButton9.Parent = pictureBox1;
+            radioButton10.Parent = pictureBox1;
+
+            // Ensure radio buttons have transparent backgrounds to blend with the map
+            radioButton1.BackColor = System.Drawing.Color.Transparent;
+            radioButton2.BackColor = System.Drawing.Color.Transparent;
+            radioButton3.BackColor = System.Drawing.Color.Transparent;
+            radioButton4.BackColor = System.Drawing.Color.Transparent;
+            radioButton5.BackColor = System.Drawing.Color.Transparent;
+            radioButton6.BackColor = System.Drawing.Color.Transparent;
+            radioButton7.BackColor = System.Drawing.Color.Transparent;
+            radioButton8.BackColor = System.Drawing.Color.Transparent;
+            radioButton9.BackColor = System.Drawing.Color.Transparent;
+            radioButton10.BackColor = System.Drawing.Color.Transparent;
+
+            // Make sure the window is fixed size to prevent layout stretching
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SoundHelper.PlayTap();
             FormNavigator.ShowNext(this, new Choices());
+        }
+
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            SoundHelper.PlayTap();
+            FormNavigator.ShowNext(this, new Map(false));
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -27,42 +67,42 @@ namespace Metro_App
             switch (selectedStation)
             {
                 case "Singer Chowrangi":
-                    targetRadioButton = radioButton1;
-                    break;
-                case "Shaan Chowrangi":
-                    targetRadioButton = radioButton2;
-                    break;
-                case "Indus Hospital":
-                    targetRadioButton = radioButton3;
-                    break;
-                case "Rahat Park":
-                case "KPT Interchange":
-                    targetRadioButton = radioButton4;
-                    break;
-                case "Defence Morr":
-                    targetRadioButton = radioButton5;
-                    break;
-                case "FTC":
-                    targetRadioButton = radioButton6;
-                    break;
-                case "Frere Hall":
                     targetRadioButton = radioButton7;
                     break;
-                case "Numaish":
-                    targetRadioButton = radioButton8;
+                case "Shaan Chowrangi":
+                    targetRadioButton = radioButton1;
                     break;
                 case "Drigh Road":
+                    targetRadioButton = radioButton2;
+                    break;
+                case "Frere Hall":
                     targetRadioButton = radioButton9;
                     break;
                 case "Millennium Mall":
+                    targetRadioButton = radioButton3;
+                    break;
+                case "Numaish":
                     targetRadioButton = radioButton10;
+                    break;
+                case "FTC":
+                    targetRadioButton = radioButton8;
+                    break;
+                case "Defence Morr":
+                    targetRadioButton = radioButton6;
+                    break;
+                case "Rahat Park":
+                case "KPT Interchange":
+                    targetRadioButton = radioButton5;
+                    break;
+                case "Indus Hospital":
+                    targetRadioButton = radioButton4;
                     break;
             }
 
             if (targetRadioButton != null)
             {
                 SetStationMarkersVisible(true);
-                button2.Text = "Hide stations from map";
+                button2.Text = ""; // Keep text empty to use only the pre-rendered button image text
                 targetRadioButton.Checked = true;
             }
         }
@@ -70,7 +110,7 @@ namespace Metro_App
         private void Stations_Load(object sender, EventArgs e)
         {
             SetStationMarkersVisible(false);
-            button2.Text = "Show stations on map";
+            button2.Text = ""; // Keep text empty to use only the pre-rendered button image text
         }
 
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -84,14 +124,15 @@ namespace Metro_App
 
         private void button2_Click(object sender, EventArgs e)
         {
+            SoundHelper.PlayTap();
             bool areMarkersVisible = AreStationMarkersVisible();
             SetStationMarkersVisible(!areMarkersVisible);
-            button2.Text = areMarkersVisible ? "Show stations on map" : "Hide stations from map";
+            button2.Text = ""; // Keep text empty to use only the pre-rendered button image text
         }
 
         private bool AreStationMarkersVisible()
         {
-            foreach (Control control in Controls)
+            foreach (Control control in pictureBox1.Controls)
             {
                 if (control is RadioButton radioButton)
                 {
@@ -104,7 +145,7 @@ namespace Metro_App
 
         private void SetStationMarkersVisible(bool isVisible)
         {
-            foreach (Control control in Controls)
+            foreach (Control control in pictureBox1.Controls)
             {
                 if (control is RadioButton radioButton)
                 {

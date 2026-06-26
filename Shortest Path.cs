@@ -10,10 +10,25 @@ namespace Metro_App
     {
         private readonly string[] nodes = MetroNetwork.Stations;
 
-        public Shortest_Path()
+        private bool _cameFromChoices;
+
+        public Shortest_Path(bool cameFromChoices = false)
         {
             InitializeComponent();
+            _cameFromChoices = cameFromChoices;
+            this.Icon = global::Metro_App.Properties.Resources.metro_app_icon;
             FormClosing += (s, e) => Application.Exit();
+
+            // Set parent to pictureBox2 for correct transparency over the map
+            button1.Parent = pictureBox2;
+            buttonNext.Parent = pictureBox2;
+            button2.Parent = pictureBox2;
+            label1.Parent = pictureBox2;
+            progressBarLoading.Parent = pictureBox2;
+
+            // Make sure the window is fixed size to prevent layout stretching
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
         }
 
         private bool ShowShortestRoute(int start, int end)
@@ -37,11 +52,26 @@ namespace Metro_App
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            SoundHelper.PlayTap();
+            if (_cameFromChoices)
+            {
+                FormNavigator.ShowNext(this, new Choices());
+            }
+            else
+            {
+                FormNavigator.ShowNext(this, new Map(false));
+            }
+        }
+
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            SoundHelper.PlayTap();
+            FormNavigator.ShowNext(this, new ReceiptGeneration());
         }
 
         private async void button2_Click(object sender, EventArgs e)
         {
+            SoundHelper.PlayTap();
             if (comboBox1.SelectedIndex == -1 || comboBox2.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select both start and end stations.");
