@@ -160,7 +160,7 @@ namespace Metro_App
             this.versionLabel.Name = "versionLabel";
             this.versionLabel.Size = new System.Drawing.Size(127, 20);
             this.versionLabel.TabIndex = 6;
-            this.versionLabel.Text = "App Version: 1.0.0";
+            this.versionLabel.Text = "App Version: 1.1.5";
             // 
             // buttonBack
             // 

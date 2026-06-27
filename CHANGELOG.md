@@ -27,7 +27,7 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## [v1.0.0] - 2026-06-21
+## [v1.0.0] - 2026-06-21 ("Crimson")
 
 ### Added
 - **Shortest Path Calculation**: Leveraged Dijkstra's algorithm to compute the optimal path between metro stations.

@@ -14,8 +14,8 @@ The latest release of the application featuring:
 - **Corrected Map Coordinates**: Fixed map markers coordinates mapping switches in Stations selection changed logic.
 - **Changelog & Technical Specs**: Added in-depth [Changelog](CHANGELOG.md) and technical [About documentation](ABOUT.md).
 
-### [v1.0.0] - 2026-06-21 ("Initial")
-The initial release featuring the Dijkstra path calculation backend, interactive metro map viewing, travel history logging, dropdown station browsers, and trip receipt printing.
+### [v1.0.0] - 2026-06-21 ("Crimson")
+The Crimson release featuring the Dijkstra path calculation backend, interactive metro map viewing, travel history logging, dropdown station browsers, and trip receipt printing.
 
 ---
 
@@ -61,23 +61,30 @@ The app covers 10 stations on the Karachi Metro:
 
 ```
 Metro Navigation System/
-├── Backend/
-│   ├── MetroNetwork.cs         # Station graph + Dijkstra shortest path algorithm
-│   └── TripHistoryService.cs   # Trip persistence and receipt generation
-├── Frontend/
-│   └── FormNavigator.cs        # WinForms navigation helper
-├── Resources/
-│   ├── background.png          # UI background images
-│   ├── metro map.jpg           # Metro network map
-│   └── *.jpg / *.png          # Station and UI assets
-├── Welcome.cs                  # Landing screen
-├── Choices.cs                  # Main menu
-├── Stations.cs                 # Station browser
-├── Map.cs                      # Metro map viewer
-├── Shortest Path.cs            # Route finder UI
-├── ReceiptGeneration.cs        # Trip receipt screen
-├── Program.cs                  # Application entry point
-└── Metro App.csproj            # Project file
+├── .github/                    # CI/CD GitHub Actions workflows
+├── Properties/                 # Assembly and settings configuration
+│   └── AssemblyInfo.cs         # Metadata and version numbers
+├── Resources/                  # UI design and background assets
+│   ├── metro map.jpg           # Interactive metro map image
+│   └── *.png / *.jpg           # Form backgrounds and styled buttons
+├── ABOUT.md                    # In-depth architectural & technical specs
+├── CHANGELOG.md                # Detailed version changelog
+├── Choices.cs                  # Main menu/options selection screen
+├── Credits.cs                  # Developer credits & project roles screen
+├── FormNavigator.cs            # WinForms navigation helper utility
+├── LICENSE                     # MIT license terms
+├── Map.cs                      # Metro map and station marker visualizer
+├── Metro App.csproj            # C# MSBuild project file
+├── MetroNetwork.cs             # Graph representation & Dijkstra pathfinding
+├── Program.cs                  # WinForms application entry point
+├── README.md                   # Getting started and project overview
+├── RELEASE_NOTES.md            # Release details & runtime configuration
+├── ReceiptGeneration.cs        # Trip receipt generator and screen
+├── Shortest Path.cs            # Route calculator and path finder UI
+├── SoundHelper.cs              # Sound effect and click audio helper
+├── Stations.cs                 # Interactive station browser
+├── TripHistoryService.cs       # Trip logger and receipts builder
+└── package-release.ps1         # PowerShell script to package zip releases
 ```
 
 ---
@@ -126,4 +133,4 @@ Developed by **Mohammad Sufiyan Aasim** (Lead Developer, UI Designer & System Ar
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE) © 2026 Mohammad Sufiyan Aasim.
+This project is licensed under the [MIT License](LICENSE) © 2026 M Sufiyan Aasim ([@msufiyanpk](https://github.com/msufiyanpk)).
