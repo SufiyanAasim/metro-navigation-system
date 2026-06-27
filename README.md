@@ -6,6 +6,17 @@ A Windows desktop application for navigating the Karachi Metro network. Built wi
 
 ## Releases
 
+### [v2.0.0] - 2026-06-27 ("Teal")
+The latest release of the application featuring:
+- **Premium Custom Message Boxes**: Replaced the standard gray OS dialog popups with a beautiful, dark-themed `CustomMessageBox` that matches the dark aesthetics of the application.
+- **Interactive & Polished Options Screen**: Shifted option buttons and description texts slightly to the left to completely prevent text clipping on standard resolutions. Description labels are now interactive with a Hand cursor and can be clicked directly to open the respective screens.
+- **Equidistant Control Layouts**: Repositioned Yes/No buttons on the receipt screen to be perfectly equidistant from each other and both left and right screen borders.
+- **Custom Destination Select Buttons**: Replaced standard dropdown combo boxes on the Shortest Path screen with flat styled Sky Blue and Amber selection buttons that spawn custom dark-themed dropdown menus, displaying choices on bold white map overlays.
+- **Printable Receipt Screen Updates**: Integrated a flat vector-style Print button that appears when "Yes" is clicked. The Yes/No buttons and query text hide automatically to present the clean ticket. Clicking "No" returns the user to the Options screen.
+- **Swapped Screen Layout & Wizard Flow**: Re-ordered choices so "Metro Map" appears first (top) and "Stations" appears second. Updated Back/Next transitions to match this flow sequentially.
+- **Stations Page Cleanup**: Removed the redundant stations dropdown selection menu, keeping only the "Show Stations on Map" toggle button. Clicking a station pin on the map shows a message box displaying the station name.
+- **Software Engineer Title**: Updated the developer role designation in credits from "Lead Developer" to "Software Engineer".
+
 ### [v1.1.5] - 2026-06-26 ("Neon")
 The latest release of the application featuring:
 - **Visual & Transparency Fixes**: Parented controls dynamically on maps to fix rounded transparent border outlines.

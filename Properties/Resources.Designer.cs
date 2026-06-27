@@ -264,6 +264,27 @@ namespace Metro_App.Properties {
             }
         }
 
+        internal static System.Drawing.Bitmap btn_print {
+            get {
+                object obj = ResourceManager.GetObject("btn_print", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        internal static System.Drawing.Bitmap btn_first_destination {
+            get {
+                object obj = ResourceManager.GetObject("btn_first_destination", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        internal static System.Drawing.Bitmap btn_final_destination {
+            get {
+                object obj = ResourceManager.GetObject("btn_final_destination", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
         internal static System.Drawing.Bitmap credits_bg {
             get {
                 object obj = ResourceManager.GetObject("credits_bg", resourceCulture);

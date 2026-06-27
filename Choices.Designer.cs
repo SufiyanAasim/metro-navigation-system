@@ -69,7 +69,7 @@ namespace Metro_App
             this.show_stations.BackgroundImage = global::Metro_App.Properties.Resources.btn_stations;
             this.show_stations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.show_stations.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.show_stations.Location = new System.Drawing.Point(205, 270);
+            this.show_stations.Location = new System.Drawing.Point(120, 270);
             this.show_stations.Name = "show_stations";
             this.show_stations.Size = new System.Drawing.Size(190, 45);
             this.show_stations.TabIndex = 3;
@@ -87,7 +87,7 @@ namespace Metro_App
             this.metro_map.BackgroundImage = global::Metro_App.Properties.Resources.btn_metro_map;
             this.metro_map.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.metro_map.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metro_map.Location = new System.Drawing.Point(205, 200);
+            this.metro_map.Location = new System.Drawing.Point(120, 200);
             this.metro_map.Name = "metro_map";
             this.metro_map.Size = new System.Drawing.Size(190, 45);
             this.metro_map.TabIndex = 2;
@@ -105,7 +105,7 @@ namespace Metro_App
             this.sortest_route.BackgroundImage = global::Metro_App.Properties.Resources.btn_shortest_route;
             this.sortest_route.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.sortest_route.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sortest_route.Location = new System.Drawing.Point(205, 340);
+            this.sortest_route.Location = new System.Drawing.Point(120, 340);
             this.sortest_route.Name = "sortest_route";
             this.sortest_route.Size = new System.Drawing.Size(190, 45);
             this.sortest_route.TabIndex = 4;
@@ -123,7 +123,7 @@ namespace Metro_App
             this.developer_credits.BackgroundImage = global::Metro_App.Properties.Resources.btn_developer_credits;
             this.developer_credits.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.developer_credits.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.developer_credits.Location = new System.Drawing.Point(205, 410);
+            this.developer_credits.Location = new System.Drawing.Point(120, 410);
             this.developer_credits.Name = "developer_credits";
             this.developer_credits.Size = new System.Drawing.Size(190, 45);
             this.developer_credits.TabIndex = 9;
@@ -151,13 +151,14 @@ namespace Metro_App
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.LightGray;
-            this.label2.Location = new System.Drawing.Point(443, 281);
+            this.label2.Location = new System.Drawing.Point(340, 281);
             this.label2.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(161, 23);
             this.label2.TabIndex = 6;
             this.label2.Text = "Show all the Stations";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
@@ -165,12 +166,14 @@ namespace Metro_App
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LightGray;
-            this.label3.Location = new System.Drawing.Point(443, 351);
+            this.label3.Location = new System.Drawing.Point(340, 351);
             this.label3.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(170, 23);
             this.label3.TabIndex = 7;
             this.label3.Text = "Find the shortest path";
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Click += new System.EventHandler(this.sortest_route_Click);
             // 
             // label4
             // 
@@ -178,12 +181,14 @@ namespace Metro_App
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.LightGray;
-            this.label4.Location = new System.Drawing.Point(443, 211);
+            this.label4.Location = new System.Drawing.Point(340, 211);
             this.label4.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(163, 23);
             this.label4.TabIndex = 8;
             this.label4.Text = "View the metro map";
+            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label4.Click += new System.EventHandler(this.metro_map_Click);
             // 
             // label5
             // 
@@ -191,12 +196,14 @@ namespace Metro_App
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.LightGray;
-            this.label5.Location = new System.Drawing.Point(443, 421);
+            this.label5.Location = new System.Drawing.Point(340, 421);
             this.label5.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(267, 23);
             this.label5.TabIndex = 10;
             this.label5.Text = "View developer and contact details";
+            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label5.Click += new System.EventHandler(this.developer_credits_Click);
             // 
             // buttonBack
             // 

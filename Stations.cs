@@ -112,5 +112,32 @@ namespace Metro_App
                 }
             }
         }
+
+        private void radioButton_Click(object sender, EventArgs e)
+        {
+            if (sender is RadioButton radioButton && radioButton.Checked)
+            {
+                string stationName = GetStationNameFromRadioButton(radioButton);
+                if (!string.IsNullOrEmpty(stationName))
+                {
+                    CustomMessageBox.Show($"Station Name: {stationName}", "Selected Station");
+                }
+            }
+        }
+
+        private string GetStationNameFromRadioButton(RadioButton rb)
+        {
+            if (rb == radioButton1) return "Shaan Chowrangi";
+            if (rb == radioButton2) return "Drigh Road";
+            if (rb == radioButton3) return "Millennium Mall";
+            if (rb == radioButton4) return "Indus Hospital";
+            if (rb == radioButton5) return "KPT Interchange";
+            if (rb == radioButton6) return "Defence Morr";
+            if (rb == radioButton7) return "Singer Chowrangi";
+            if (rb == radioButton8) return "FTC";
+            if (rb == radioButton9) return "Frere Hall";
+            if (rb == radioButton10) return "Numaish";
+            return "";
+        }
     }
 }

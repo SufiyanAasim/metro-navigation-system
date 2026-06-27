@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.0.0] - 2026-06-27 ("Teal")
+
+### Added
+- **Premium Custom Message Boxes**: Created `CustomMessageBox.cs` to show a beautiful, dark-themed, and modern looking modal dialog matching the app design system.
+- **Teal Print Button**: Generated and integrated `btn_print.png` asset to match the visual design system.
+- **Form Print Logic**: Clicking "Yes" on the Receipt screen displays the ticket details, hides "Yes" and "No" buttons and query labels, and reveals the "Print" button.
+- **Custom Destination Buttons**: Replaced dropdown combo boxes on the Shortest Path screen with custom Sky Blue (`btn_first_destination.png`) and Amber (`btn_final_destination.png`) graphical buttons that trigger a custom dark context list, displaying chosen values on bold white labels over the map.
+- **Map Pin Clicks**: Wired Click handlers for map pin radio buttons on the Stations page to pop up their names.
+
+### Changed
+- **Swapped Options Order**: Positioned "Metro Map" as the first choice and "Stations" as the second choice on the Choices menu.
+- **Choices Layout Improvements**: Shifted option buttons left (X=120) and description labels left (X=340) to prevent text clipping. Styled labels with Hand cursors and wired them to navigate on click.
+- **Equidistant Button Layouts**: Repositioned Yes/No buttons on the receipt screen to be mathematically equidistant from corners and each other.
+- **Wizard Sequence**: Swapped navigation order to go `Choices` -> `Metro Map` -> `Stations` -> `Shortest Path` -> `Receipt`.
+- **Role Title**: Renamed role title from "Lead Developer" to "Software Engineer" in all credits and layout panels.
+
+### Removed
+- **Stations Dropdown Menu**: Removed the dropdown selection combobox (`comboBox1`) and associated event handlers from the `Stations` page.
+
 ## [v1.1.5] - 2026-06-26 ("Neon")
 
 ### Added

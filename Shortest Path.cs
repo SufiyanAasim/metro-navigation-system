@@ -25,10 +25,57 @@ namespace Metro_App
             button2.Parent = pictureBox2;
             label1.Parent = pictureBox2;
             progressBarLoading.Parent = pictureBox2;
+            buttonStartStation.Parent = pictureBox2;
+            buttonEndStation.Parent = pictureBox2;
+            textBoxStart.Parent = pictureBox2;
+            textBoxEnd.Parent = pictureBox2;
 
             // Make sure the window is fixed size to prevent layout stretching
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
+        }
+
+        private int _startStationIndex = -1;
+        private int _endStationIndex = -1;
+
+        private void ShowStationMenu(Control sourceControl, Action<int> onSelect)
+        {
+            var menu = new ContextMenuStrip();
+            menu.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            menu.BackColor = System.Drawing.Color.FromArgb(15, 25, 45);
+            menu.ForeColor = System.Drawing.Color.White;
+            menu.ShowImageMargin = false;
+
+            for (int i = 0; i < nodes.Length; i++)
+            {
+                int index = i;
+                var item = new ToolStripMenuItem(nodes[i]);
+                item.ForeColor = System.Drawing.Color.White;
+                item.Click += (sender, e) => onSelect(index);
+                menu.Items.Add(item);
+            }
+
+            menu.Show(sourceControl, new System.Drawing.Point(0, sourceControl.Height));
+        }
+
+        private void buttonStartStation_Click(object sender, EventArgs e)
+        {
+            SoundHelper.PlayTap();
+            ShowStationMenu(buttonStartStation, (index) =>
+            {
+                _startStationIndex = index;
+                textBoxStart.Text = nodes[index];
+            });
+        }
+
+        private void buttonEndStation_Click(object sender, EventArgs e)
+        {
+            SoundHelper.PlayTap();
+            ShowStationMenu(buttonEndStation, (index) =>
+            {
+                _endStationIndex = index;
+                textBoxEnd.Text = nodes[index];
+            });
         }
 
         private bool ShowShortestRoute(int start, int end)
@@ -36,16 +83,14 @@ namespace Metro_App
             RouteResult route = MetroNetwork.FindShortestRoute(start, end);
             if (route == null)
             {
-                MessageBox.Show("No path exists between the selected stations.");
+                CustomMessageBox.Show("No path exists between the selected stations.", "Error");
                 return false;
             }
 
             TripHistoryService.SaveTrip(nodes[start], nodes[end], route.Distance);
-            MessageBox.Show(
+            CustomMessageBox.Show(
                 $"Shortest path from {nodes[start]} to {nodes[end]}: {route.DisplayPath}{Environment.NewLine}Distance: {route.Distance} km",
-                "Shortest Route",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+                "Shortest Route");
 
             return true;
         }
@@ -72,18 +117,18 @@ namespace Metro_App
         private async void button2_Click(object sender, EventArgs e)
         {
             SoundHelper.PlayTap();
-            if (comboBox1.SelectedIndex == -1 || comboBox2.SelectedIndex == -1)
+            if (_startStationIndex == -1 || _endStationIndex == -1)
             {
-                MessageBox.Show("Please select both start and end stations.");
+                CustomMessageBox.Show("Please select both start and end stations.", "Missing Selection");
                 return;
             }
 
-            int startNode = comboBox1.SelectedIndex;
-            int endNode = comboBox2.SelectedIndex;
+            int startNode = _startStationIndex;
+            int endNode = _endStationIndex;
 
             if (startNode == endNode)
             {
-                MessageBox.Show("Please choose two different stations.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CustomMessageBox.Show("Please choose two different stations.", "Invalid Selection");
                 return;
             }
 
@@ -105,35 +150,11 @@ namespace Metro_App
                 return;
             }
 
-            DialogResult result = MessageBox.Show("Would you like to view the receipt?", "Receipt", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                FormNavigator.ShowNext(this, new ReceiptGeneration());
-            }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
+            FormNavigator.ShowNext(this, new ReceiptGeneration());
         }
 
         private void Shortest_Path_Load(object sender, EventArgs e)
         {
-            comboBox1.Items.Clear();
-            comboBox2.Items.Clear();
-
-            foreach (string station in nodes)
-            {
-                comboBox1.Items.Add(station);
-                comboBox2.Items.Add(station);
-            }
         }
 
         private void pictureBox2_Click_1(object sender, EventArgs e)

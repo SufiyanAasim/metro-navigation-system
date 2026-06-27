@@ -52,7 +52,7 @@ namespace Metro_App
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to open mail client: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CustomMessageBox.Show("Unable to open mail client: " + ex.Message, "Error");
             }
         }
 
@@ -64,7 +64,7 @@ namespace Metro_App
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to open web browser: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CustomMessageBox.Show("Unable to open web browser: " + ex.Message, "Error");
             }
         }
     }

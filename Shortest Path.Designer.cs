@@ -29,8 +29,10 @@ namespace Metro_App
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.buttonStartStation = new System.Windows.Forms.Button();
+            this.buttonEndStation = new System.Windows.Forms.Button();
+            this.textBoxStart = new System.Windows.Forms.TextBox();
+            this.textBoxEnd = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.progressBarLoading = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,29 +61,70 @@ namespace Metro_App
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(14, 8);
-            this.comboBox1.MaxDropDownItems = 10;
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(131, 24);
-            this.comboBox1.TabIndex = 13;
-            this.comboBox1.Text = "First Destination";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
+            // buttonStartStation
             // 
-            // comboBox2
+            this.buttonStartStation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonStartStation.BackColor = System.Drawing.Color.Transparent;
+            this.buttonStartStation.FlatAppearance.BorderSize = 0;
+            this.buttonStartStation.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonStartStation.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonStartStation.BackgroundImage = global::Metro_App.Properties.Resources.btn_first_destination;
+            this.buttonStartStation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonStartStation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonStartStation.Location = new System.Drawing.Point(50, 15);
+            this.buttonStartStation.Name = "buttonStartStation";
+            this.buttonStartStation.Size = new System.Drawing.Size(180, 60);
+            this.buttonStartStation.TabIndex = 13;
+            this.buttonStartStation.Text = "";
+            this.buttonStartStation.UseVisualStyleBackColor = false;
+            this.buttonStartStation.Click += new System.EventHandler(this.buttonStartStation_Click);
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(151, 8);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(133, 24);
-            this.comboBox2.TabIndex = 14;
-            this.comboBox2.Tag = "";
-            this.comboBox2.Text = "Final Destination";
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            this.comboBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
+            // buttonEndStation
+            // 
+            this.buttonEndStation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEndStation.BackColor = System.Drawing.Color.Transparent;
+            this.buttonEndStation.FlatAppearance.BorderSize = 0;
+            this.buttonEndStation.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonEndStation.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonEndStation.BackgroundImage = global::Metro_App.Properties.Resources.btn_final_destination;
+            this.buttonEndStation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonEndStation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEndStation.Location = new System.Drawing.Point(260, 15);
+            this.buttonEndStation.Name = "buttonEndStation";
+            this.buttonEndStation.Size = new System.Drawing.Size(180, 60);
+            this.buttonEndStation.TabIndex = 14;
+            this.buttonEndStation.Text = "";
+            this.buttonEndStation.UseVisualStyleBackColor = false;
+            this.buttonEndStation.Click += new System.EventHandler(this.buttonEndStation_Click);
+            // 
+            // textBoxStart
+            // 
+            this.textBoxStart.BackColor = System.Drawing.Color.FromArgb(4, 10, 20);
+            this.textBoxStart.ForeColor = System.Drawing.Color.White;
+            this.textBoxStart.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.textBoxStart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxStart.Location = new System.Drawing.Point(50, 85);
+            this.textBoxStart.Name = "textBoxStart";
+            this.textBoxStart.ReadOnly = true;
+            this.textBoxStart.Size = new System.Drawing.Size(180, 28);
+            this.textBoxStart.TabIndex = 20;
+            this.textBoxStart.Text = "Not Selected";
+            this.textBoxStart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxEnd
+            // 
+            this.textBoxEnd.BackColor = System.Drawing.Color.FromArgb(4, 10, 20);
+            this.textBoxEnd.ForeColor = System.Drawing.Color.White;
+            this.textBoxEnd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.textBoxEnd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxEnd.Location = new System.Drawing.Point(260, 85);
+            this.textBoxEnd.Name = "textBoxEnd";
+            this.textBoxEnd.ReadOnly = true;
+            this.textBoxEnd.Size = new System.Drawing.Size(180, 28);
+            this.textBoxEnd.TabIndex = 21;
+            this.textBoxEnd.Text = "Not Selected";
+            this.textBoxEnd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button2
             // 
@@ -134,7 +177,6 @@ namespace Metro_App
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -174,8 +216,10 @@ namespace Metro_App
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressBarLoading);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBoxEnd);
+            this.Controls.Add(this.textBoxStart);
+            this.Controls.Add(this.buttonEndStation);
+            this.Controls.Add(this.buttonStartStation);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
@@ -193,8 +237,10 @@ namespace Metro_App
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button buttonStartStation;
+        private System.Windows.Forms.Button buttonEndStation;
+        private System.Windows.Forms.TextBox textBoxStart;
+        private System.Windows.Forms.TextBox textBoxEnd;
         private System.Windows.Forms.Button button2;
         internal System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;

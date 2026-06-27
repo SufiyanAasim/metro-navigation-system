@@ -97,6 +97,7 @@ namespace Metro_App
             this.roleLabel.Size = new System.Drawing.Size(262, 23);
             this.roleLabel.TabIndex = 1;
             this.roleLabel.Text = "Software Engineer, UI Designer & System Architect";
+            this.roleLabel.UseMnemonic = false;
             // 
             // emailTagLabel
             // 
@@ -160,7 +161,7 @@ namespace Metro_App
             this.versionLabel.Name = "versionLabel";
             this.versionLabel.Size = new System.Drawing.Size(127, 20);
             this.versionLabel.TabIndex = 6;
-            this.versionLabel.Text = "App Version: 1.1.5";
+            this.versionLabel.Text = "App Version: 2.0.0";
             // 
             // buttonBack
             // 

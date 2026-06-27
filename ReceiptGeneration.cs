@@ -41,7 +41,7 @@ namespace Metro_App
             string receiptContent = TripHistoryService.ReadLatestReceipt();
             if (string.IsNullOrWhiteSpace(receiptContent))
             {
-                MessageBox.Show("No trip data found.");
+                CustomMessageBox.Show("No trip data found.", "Error");
                 return;
             }
 
@@ -53,6 +53,13 @@ namespace Metro_App
             button1.Visible = false;
             button3.Visible = false;
             label1.Visible = false;
+            buttonPrint.Visible = true;
+        }
+
+        private void buttonPrint_Click(object sender, EventArgs e)
+        {
+            SoundHelper.PlayTap();
+            CustomMessageBox.Show("Trip receipt printed successfully!", "Print");
         }
 
         private void buttonBack_Click(object sender, EventArgs e)

@@ -35,6 +35,7 @@ namespace Metro_App
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.pictureBoxInnerReport = new System.Windows.Forms.PictureBox();
+            this.buttonPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInnerReport)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +61,7 @@ namespace Metro_App
             this.button1.BackgroundImage = global::Metro_App.Properties.Resources.btn_yes;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(240, 420);
+            this.button1.Location = new System.Drawing.Point(180, 420);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 45);
             this.button1.TabIndex = 1;
@@ -78,7 +79,7 @@ namespace Metro_App
             this.button3.BackgroundImage = global::Metro_App.Properties.Resources.btn_no;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(400, 420);
+            this.button3.Location = new System.Drawing.Point(478, 420);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 45);
             this.button3.TabIndex = 3;
@@ -149,6 +150,25 @@ namespace Metro_App
             this.pictureBoxInnerReport.TabStop = false;
             this.pictureBoxInnerReport.Visible = false;
             // 
+            // buttonPrint
+            // 
+            this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPrint.BackColor = System.Drawing.Color.Transparent;
+            this.buttonPrint.FlatAppearance.BorderSize = 0;
+            this.buttonPrint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonPrint.BackgroundImage = global::Metro_App.Properties.Resources.btn_print;
+            this.buttonPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPrint.Location = new System.Drawing.Point(330, 420);
+            this.buttonPrint.Name = "buttonPrint";
+            this.buttonPrint.Size = new System.Drawing.Size(120, 45);
+            this.buttonPrint.TabIndex = 8;
+            this.buttonPrint.Text = "";
+            this.buttonPrint.UseVisualStyleBackColor = false;
+            this.buttonPrint.Visible = false;
+            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
+            // 
             // ReceiptGeneration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -160,6 +180,7 @@ namespace Metro_App
             this.Controls.Add(this.pictureBoxInnerReport);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonBack);
+            this.Controls.Add(this.buttonPrint);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -181,5 +202,6 @@ namespace Metro_App
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.PictureBox pictureBoxInnerReport;
+        private System.Windows.Forms.Button buttonPrint;
     }
 }

@@ -1,38 +1,49 @@
-# Release Notes: Metro Navigation System v1.1.5 ("Neon")
+# Release Notes: Metro Navigation System v2.0.0 ("Teal")
 
-Welcome to the **v1.1.5 ("Neon")** release of the **Metro Navigation System**! This release brings significant UI refinements, standardized button layouts, a complete navigation loop cleanup, Welcome screen fixes, and coordinate mapping corrections.
+Welcome to the **v2.0.0 ("Teal")** release of the **Metro Navigation System**! This release brings a major version upgrade featuring a dedicated printable receipt flow, premium custom dark message boxes, options menu restructuring, simplified station maps, wizard flow adjustments, and developer title renaming.
 
 ## Release Metadata
-- **Version**: `v1.1.5` (Codename: **Neon**)
-- **Release Date**: 2026-06-26
+- **Version**: `v2.0.0` (Codename: **Teal**)
+- **Release Date**: 2026-06-27
 - **Platform**: Windows (x86/x64)
 - **Target Framework**: .NET Framework 4.7.2
 
 ## What's New in this Release
 
-### 1. High Contrast & Readable UI
-- **Choices Screen Descriptions**: Styled the description labels on the Options page with white, bold Segoe UI text. This fixes the visibility issue where dark gray descriptions were unreadable against the dark background.
-*   **Form Sizing Constraints**: Enforced `FormBorderStyle.FixedDialog` and disabled the Maximize button on all screens. This blocks resizing, preventing the layout from getting cut off or offset when maximized.
+### 1. Premium Custom Message Boxes
+- Replaced standard gray Windows OS message boxes with a custom styled dialog (`CustomMessageBox.cs`).
+- Renders a modern deep dark blue background (`#0F192D`), crisp Segoe UI typography, and a custom flat Teal OK button (`#0D9488`).
 
-### 2. Standardized & Equidistant Button Layouts
-- **Synchronized Dimensions**: All core buttons (Back, Next, Exit, Find) have been synchronized to a standard dimension of `120 x 40` (and `Yes`/`No` buttons set to `120 x 45` to respect the aspect ratio of the underlying neon graphical assets).
-- **Symmetric Spacing**: Navigation buttons at the bottom of the screens are placed at `X = 500` (Back) and `X = 640` (Next) at `Y = 500`, leaving a standard `20` pixel gap between them.
-- **DPI Scaling Alignment**: Removed hardcoded coordinate positioning from the code-behind constructors. This ensures that the controls auto-scale properly under Windows High DPI text scaling settings and never get hidden or offset.
+### 2. Interactive & Clipless Options Screen
+- **Shifted Option Layout**: Moved option buttons left (X=120) and description labels left (X=340) to completely prevent description text overflow or clipping on standard screens.
+- **Clickable Descriptions**: Description text labels are now fully interactive, transforming the cursor to a Hand on hover and navigating the user directly to the respective page when clicked.
 
-### 3. Smart Context-Aware Redirection
-- **Wizard Loop**: Forward and backward navigation loops are fully established (`Welcome` -> `Choices` <-> `Stations` <-> `Map` <-> `Shortest Path` <-> `ReceiptGeneration`).
-- **Options Redirection**: If a user accesses a map page or shortest route page directly from the Options screen, clicking **Back** returns them directly to the Options screen instead of forcing them back into the wizard sequence.
-- **Credits Screen Back**: The Back button on the Developer Credits page always returns the user to the Options screen.
+### 3. Equidistant Control Layouts
+- Repositioned the **Yes** and **No** buttons on the Receipt screen to be perfectly equidistant from each other and the left/right screen borders (Yes at X=180, No at X=478).
 
-### 4. Welcome & Credits Screen Cleanup
-- **Welcome Exit Button**: Introduced a flat, transparent Exit button at the bottom-right corner of the Welcome page to allow users to exit the application immediately.
-- **Start Button Rendering Fix**: Resolved the duplicate background rendering on the Welcome page's Start button which caused green box clipping.
-- **Credits Next Button Removal**: Hid the redundant Next button on the Credits screen and realigned the Back button to the bottom-left of the screen.
-- **Receipt Next Button Removal**: Removed the Next button from the Receipt screen, making it the natural endpoint of the sequential booking wizard loop.
-- **Dynamic App Version**: The Developer Credits screen now dynamically reads and displays the version number (`1.1.5`) directly from the assembly metadata instead of hardcoding it.
+### 4. Custom Destination Select Buttons
+- Replaced standard dropdown combo boxes on the Shortest Path screen with custom Sky Blue and Amber destination buttons:
+  - **Start Station** (`btn_first_destination.png`)
+  - **End Station** (`btn_final_destination.png`)
+- Clicking either button spawns a custom dark dropdown menu list of stations. Selected choices display in bold white text overlays directly on the map.
 
-### 5. Stations Map Marker Correction
-- Corrected the switch cases in [Stations.cs](file:///d:/University%20Projects/Metro%20Navigation%20System%20(C%23)/Stations.cs) to map each combobox station selection to its exact physical coordinates on the Karachi Metro Map background, resolving the mismatches where selecting a station would highlight the wrong coordinates.
+### 5. Dedicated Printable Receipt Screen Flow
+- **Teal Print Button**: Created and integrated a clean, custom `btn_print.png` matching the visual style of other navigation buttons.
+- **Dynamic Controls Hiding**: Clicking **Yes** to generate a receipt now hides the Yes/No buttons and the query label, showing the printed text details on a clean ticket with only the custom Print button visible.
+- **Redirects**: Clicking **No** immediately routes the user back to the main options screen.
+
+### 6. Restructured Menu Layout & Wizard Loop
+- **Swapped Screen Layout**: Re-positioned the options so "Metro Map" appears first (top) and "Stations" second (middle).
+- **Corrected Wizard Flow**: Re-aligned the step-by-step sequential navigation flow to:
+  `Welcome` -> `Choices` -> `Metro Map` -> `Stations` -> `Shortest Route` -> `Receipt`.
+- **Dynamic Redirection Contexts**: Handled the backtracking and forward transitions to ensure users can access screens directly or through the loop without dead ends.
+
+### 7. Stations Page Map Pin Clicks & Dropdown Cleanup
+- **Removed Dropdown Menu**: Deleted the old station dropdown combobox (`comboBox1`) and its keyboard event handlers. The Stations page now relies cleanly and solely on the **Show Stations on Map** toggle button to display/hide all network pins.
+- **Station Info Popups**: Clicking any radio button marker pin on the map now displays a custom dialog box presenting the station's full name.
+
+### 8. Software Engineer Title Renaming
+- Changed the developer credits role title from "Lead Developer" to "Software Engineer" on both the Credits form and in the repository documentation (`README.md`).
 
 ---
 

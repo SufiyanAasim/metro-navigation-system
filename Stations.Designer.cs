@@ -223,6 +223,17 @@ namespace Metro_App
             this.buttonNext.Text = "";
             this.buttonNext.UseVisualStyleBackColor = false;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            this.radioButton1.Click += new System.EventHandler(this.radioButton_Click);
+            this.radioButton2.Click += new System.EventHandler(this.radioButton_Click);
+            this.radioButton3.Click += new System.EventHandler(this.radioButton_Click);
+            this.radioButton4.Click += new System.EventHandler(this.radioButton_Click);
+            this.radioButton5.Click += new System.EventHandler(this.radioButton_Click);
+            this.radioButton6.Click += new System.EventHandler(this.radioButton_Click);
+            this.radioButton7.Click += new System.EventHandler(this.radioButton_Click);
+            this.radioButton8.Click += new System.EventHandler(this.radioButton_Click);
+            this.radioButton9.Click += new System.EventHandler(this.radioButton_Click);
+            this.radioButton10.Click += new System.EventHandler(this.radioButton_Click);
+
             // 
             // Stations
             // 
