@@ -125,7 +125,7 @@ Both workflows run on `windows-latest`.
 
 ## Developer Credits
 
-Developed by **Mohammad Sufiyan Aasim** (Lead Developer, UI Designer & System Architect).
+Developed by **Mohammad Sufiyan Aasim** (Software Engineer, UI Designer & System Architect).
 - **Email**: [sufiyanaasim@outlook.com](mailto:sufiyanaasim@outlook.com)
 - **GitHub**: [msufiyanpk](https://github.com/msufiyanpk)
 

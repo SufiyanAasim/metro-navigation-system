@@ -59,7 +59,7 @@ namespace Metro_App
             }
             else
             {
-                FormNavigator.ShowNext(this, new Map(false));
+                FormNavigator.ShowNext(this, new Stations(false));
             }
         }
 

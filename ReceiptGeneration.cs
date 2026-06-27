@@ -49,6 +49,10 @@ namespace Metro_App
             pictureBoxInnerReport.Visible = true;
             richTextBox1.Visible = true;
             richTextBox1.BringToFront();
+
+            button1.Visible = false;
+            button3.Visible = false;
+            label1.Visible = false;
         }
 
         private void buttonBack_Click(object sender, EventArgs e)

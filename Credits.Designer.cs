@@ -96,7 +96,7 @@ namespace Metro_App
             this.roleLabel.Name = "roleLabel";
             this.roleLabel.Size = new System.Drawing.Size(262, 23);
             this.roleLabel.TabIndex = 1;
-            this.roleLabel.Text = "Lead Developer, UI Designer & System Architect";
+            this.roleLabel.Text = "Software Engineer, UI Designer & System Architect";
             // 
             // emailTagLabel
             // 

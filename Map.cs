@@ -31,20 +31,13 @@ namespace Metro_App
         private void button2_Click(object sender, EventArgs e)
         {
             SoundHelper.PlayTap();
-            if (_cameFromChoices)
-            {
-                FormNavigator.ShowNext(this, new Choices());
-            }
-            else
-            {
-                FormNavigator.ShowNext(this, new Stations());
-            }
+            FormNavigator.ShowNext(this, new Choices());
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
             SoundHelper.PlayTap();
-            FormNavigator.ShowNext(this, new Shortest_Path(false));
+            FormNavigator.ShowNext(this, new Stations(false));
         }
     }
 }

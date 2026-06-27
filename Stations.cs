@@ -6,9 +6,12 @@ namespace Metro_App
 {
     public partial class Stations : Form
     {
-        public Stations()
+        private bool _cameFromChoices;
+
+        public Stations(bool cameFromChoices = false)
         {
             InitializeComponent();
+            _cameFromChoices = cameFromChoices;
             this.Icon = global::Metro_App.Properties.Resources.metro_app_icon;
             FormClosing += (s, e) => Application.Exit();
 
@@ -48,64 +51,23 @@ namespace Metro_App
         private void button1_Click(object sender, EventArgs e)
         {
             SoundHelper.PlayTap();
-            FormNavigator.ShowNext(this, new Choices());
+            if (_cameFromChoices)
+            {
+                FormNavigator.ShowNext(this, new Choices());
+            }
+            else
+            {
+                FormNavigator.ShowNext(this, new Map(false));
+            }
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
             SoundHelper.PlayTap();
-            FormNavigator.ShowNext(this, new Map(false));
+            FormNavigator.ShowNext(this, new Shortest_Path(false));
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedIndex == -1) return;
 
-            string selectedStation = comboBox1.SelectedItem.ToString();
-            RadioButton targetRadioButton = null;
-
-            switch (selectedStation)
-            {
-                case "Singer Chowrangi":
-                    targetRadioButton = radioButton7;
-                    break;
-                case "Shaan Chowrangi":
-                    targetRadioButton = radioButton1;
-                    break;
-                case "Drigh Road":
-                    targetRadioButton = radioButton2;
-                    break;
-                case "Frere Hall":
-                    targetRadioButton = radioButton9;
-                    break;
-                case "Millennium Mall":
-                    targetRadioButton = radioButton3;
-                    break;
-                case "Numaish":
-                    targetRadioButton = radioButton10;
-                    break;
-                case "FTC":
-                    targetRadioButton = radioButton8;
-                    break;
-                case "Defence Morr":
-                    targetRadioButton = radioButton6;
-                    break;
-                case "Rahat Park":
-                case "KPT Interchange":
-                    targetRadioButton = radioButton5;
-                    break;
-                case "Indus Hospital":
-                    targetRadioButton = radioButton4;
-                    break;
-            }
-
-            if (targetRadioButton != null)
-            {
-                SetStationMarkersVisible(true);
-                button2.Text = ""; // Keep text empty to use only the pre-rendered button image text
-                targetRadioButton.Checked = true;
-            }
-        }
 
         private void Stations_Load(object sender, EventArgs e)
         {
@@ -113,10 +75,7 @@ namespace Metro_App
             button2.Text = ""; // Keep text empty to use only the pre-rendered button image text
         }
 
-        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
-        }
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

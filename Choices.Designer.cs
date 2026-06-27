@@ -69,10 +69,10 @@ namespace Metro_App
             this.show_stations.BackgroundImage = global::Metro_App.Properties.Resources.btn_stations;
             this.show_stations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.show_stations.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.show_stations.Location = new System.Drawing.Point(205, 200);
+            this.show_stations.Location = new System.Drawing.Point(205, 270);
             this.show_stations.Name = "show_stations";
             this.show_stations.Size = new System.Drawing.Size(190, 45);
-            this.show_stations.TabIndex = 2;
+            this.show_stations.TabIndex = 3;
             this.show_stations.Text = "";
             this.show_stations.UseVisualStyleBackColor = false;
             this.show_stations.Click += new System.EventHandler(this.button2_Click);
@@ -87,10 +87,10 @@ namespace Metro_App
             this.metro_map.BackgroundImage = global::Metro_App.Properties.Resources.btn_metro_map;
             this.metro_map.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.metro_map.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metro_map.Location = new System.Drawing.Point(205, 270);
+            this.metro_map.Location = new System.Drawing.Point(205, 200);
             this.metro_map.Name = "metro_map";
             this.metro_map.Size = new System.Drawing.Size(190, 45);
-            this.metro_map.TabIndex = 3;
+            this.metro_map.TabIndex = 2;
             this.metro_map.Text = "";
             this.metro_map.UseVisualStyleBackColor = false;
             this.metro_map.Click += new System.EventHandler(this.metro_map_Click);
@@ -151,7 +151,7 @@ namespace Metro_App
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.LightGray;
-            this.label2.Location = new System.Drawing.Point(443, 211);
+            this.label2.Location = new System.Drawing.Point(443, 281);
             this.label2.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(161, 23);
@@ -178,7 +178,7 @@ namespace Metro_App
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.LightGray;
-            this.label4.Location = new System.Drawing.Point(443, 281);
+            this.label4.Location = new System.Drawing.Point(443, 211);
             this.label4.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(163, 23);
