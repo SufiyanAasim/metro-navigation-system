@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>metro app icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\metro_app_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -50,19 +50,19 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Resources.Extensions">
-      <HintPath>System.Resources.Extensions.dll</HintPath>
+      <HintPath>lib\System.Resources.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Buffers">
-      <HintPath>System.Buffers.dll</HintPath>
+      <HintPath>lib\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory">
-      <HintPath>System.Memory.dll</HintPath>
+      <HintPath>lib\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics.Vectors">
-      <HintPath>System.Numerics.Vectors.dll</HintPath>
+      <HintPath>lib\System.Numerics.Vectors.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
-      <HintPath>System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <HintPath>lib\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -155,17 +155,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include=".gitignore" />
-    <None Include="LICENSE" />
-    <None Include="README.md" />
-    <None Include="RELEASE_NOTES.md" />
-    <None Include="package-release.ps1" />
-    <None Include=".github\workflows\backend.yml" />
-    <None Include=".github\workflows\frontend.yml" />
-    <None Include=".github\workflows\release.yml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\background.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\credits_bg.png">
@@ -174,42 +163,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\metro map.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Picsart_24-12-27_14-37-54-787.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Picsart_24-12-27_14-32-57-455.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Picsart_24-12-27_14-33-18-325.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Picsart_24-12-27_14-34-56-363.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Picsart_24-12-27_14-35-30-338.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Picsart_24-12-27_14-35-47-702.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Picsart_24-12-27_14-36-10-672.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Picsart_24-12-27_14-36-40-202.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Picsart_24-12-27_14-37-02-583.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Picsart_24-12-27_14-37-29-019.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Picsart_24-12-28_19-53-53-185.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="metro app icon.ico" />
     <None Include="Resources\btn_back.png" />
     <None Include="Resources\btn_developer_credits.png" />
     <None Include="Resources\btn_exit.png" />

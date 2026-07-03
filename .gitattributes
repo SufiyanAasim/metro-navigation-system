@@ -1,0 +1,21 @@
+# Auto detect text files and normalize line endings to CRLF on checkout for this Windows/.NET project
+* text=auto eol=crlf
+
+*.cs text
+*.resx text
+*.csproj text
+*.config text
+*.settings text
+*.md text
+*.yml text
+*.yaml text
+*.ps1 text
+
+# Binary assets — do not diff or normalize line endings
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.dll binary
+*.exe binary
+*.zip binary

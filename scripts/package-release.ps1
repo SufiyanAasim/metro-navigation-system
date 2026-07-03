@@ -1,5 +1,5 @@
 # PowerShell script to package the release binaries into a ZIP file.
-# Usage: .\package-release.ps1 -Version "1.0.0"
+# Usage: .\scripts\package-release.ps1 -Version "1.0.0"
 
 param (
     [string]$Version = "2.0.0"
@@ -7,15 +7,19 @@ param (
 
 $ErrorActionPreference = "Stop"
 
+$repoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
+$projectDir = Join-Path $repoRoot "src\MetroApp"
+$projectFile = Join-Path $projectDir "Metro App.csproj"
+
 Write-Host "=============================================" -ForegroundColor Cyan
 Write-Host "Packaging Metro Navigation System v$Version..." -ForegroundColor Cyan
 Write-Host "=============================================" -ForegroundColor Cyan
 
 # 1. Build the application in Release mode
 Write-Host "Building project in Release mode..." -ForegroundColor Blue
-dotnet build "Metro App.csproj" -c Release
+dotnet build "$projectFile" -c Release
 
-$releaseBinDir = Join-Path $PSScriptRoot "bin\Release"
+$releaseBinDir = Join-Path $projectDir "bin\Release"
 $exePath = Join-Path $releaseBinDir "Metro Navigation System.exe"
 
 if (-not (Test-Path $exePath)) {
@@ -23,7 +27,7 @@ if (-not (Test-Path $exePath)) {
 }
 
 # 2. Setup Staging Directory
-$stageDir = Join-Path $PSScriptRoot "temp_release_stage"
+$stageDir = Join-Path $repoRoot "temp_release_stage"
 if (Test-Path $stageDir) {
     Write-Host "Cleaning up old staging directory..." -ForegroundColor Yellow
     Remove-Item $stageDir -Recurse -Force
@@ -48,9 +52,9 @@ foreach ($file in $filesToCopy) {
 }
 
 # Copy optional root documentation
-$docs = @("LICENSE", "README.md", "RELEASE_NOTES.md", "CHANGELOG.md", "ABOUT.md")
+$docs = @("LICENSE", "README.md", "CHANGELOG.md")
 foreach ($doc in $docs) {
-    $docPath = Join-Path $PSScriptRoot $doc
+    $docPath = Join-Path $repoRoot $doc
     if (Test-Path $docPath) {
         Copy-Item -Path $docPath -Destination $stageDir
     }
@@ -58,7 +62,7 @@ foreach ($doc in $docs) {
 
 # 4. Create ZIP archive
 $zipName = "MetroNavigationSystem-v$Version.zip"
-$zipPath = Join-Path $PSScriptRoot $zipName
+$zipPath = Join-Path $repoRoot $zipName
 
 if (Test-Path $zipPath) {
     Write-Host "Removing existing ZIP package..." -ForegroundColor Yellow

@@ -1,5 +1,6 @@
 bin/
 obj/
+packages/
 .vs/
 *.user
 *.suo
@@ -9,4 +10,5 @@ obj/
 *.tmp
 Metro App Travel History/
 *.zip
+temp_release_stage/
 

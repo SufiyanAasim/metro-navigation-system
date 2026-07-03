@@ -20,23 +20,23 @@ jobs:
         uses: microsoft/setup-msbuild@v2
 
       - name: Restore NuGet Packages
-        run: msbuild "Metro App.csproj" /t:Restore /p:Configuration=Release /p:Platform=AnyCPU
+        run: msbuild "src\MetroApp\Metro App.csproj" /t:Restore /p:Configuration=Release /p:Platform=AnyCPU
 
       - name: Build Application (Release Mode)
-        run: msbuild "Metro App.csproj" /p:Configuration=Release /p:Platform=AnyCPU
+        run: msbuild "src\MetroApp\Metro App.csproj" /p:Configuration=Release /p:Platform=AnyCPU
 
       - name: Package Binaries
         shell: pwsh
         run: |
           # Extract version from tag (e.g., v1.0.0 -> 1.0.0)
           $version = "${{ github.ref_name }}".TrimStart('v')
-          ./package-release.ps1 -Version $version
+          ./scripts/package-release.ps1 -Version $version
 
       - name: Create GitHub Release and Upload Asset
         uses: softprops/action-gh-release@v2
         with:
           files: MetroNavigationSystem-v*.zip
-          body_path: RELEASE_NOTES.md
+          body_path: CHANGELOG.md
           draft: false
           prerelease: false
         env:

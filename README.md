@@ -23,7 +23,7 @@ The latest release of the application featuring:
 - **Redesigned Welcome & Developer Screens**: Cleaned up the landing screen with visual alignment and a new Exit button; removed/hid redundant wizard navigation paths on Credits.
 - **Equidistant Button Layout**: Synchronized all general buttons to `120 x 40` dimensions with a clean `20` pixel margin.
 - **Corrected Map Coordinates**: Fixed map markers coordinates mapping switches in Stations selection changed logic.
-- **Changelog & Technical Specs**: Added in-depth [Changelog](CHANGELOG.md) and technical [About documentation](ABOUT.md).
+- **Changelog & Technical Specs**: Added in-depth [Changelog](CHANGELOG.md) and technical [architecture documentation](docs/architecture/overview.md).
 
 ### [v1.0.0] - 2026-06-21 ("Crimson")
 The Crimson release featuring the Dijkstra path calculation backend, interactive metro map viewing, travel history logging, dropdown station browsers, and trip receipt printing.
@@ -42,10 +42,13 @@ The Crimson release featuring the Dijkstra path calculation backend, interactive
 
 ## Documentation
 
-For in-depth explanations of the system architecture and historical log files, please refer to:
-*   [ABOUT.md](ABOUT.md) — Technical details of Dijkstra's algorithm, graph representation (adjacency matrix), and frontend form-navigation framework.
+*   [docs/architecture/overview.md](docs/architecture/overview.md) — Technical details of Dijkstra's algorithm, graph representation (adjacency matrix), and the form-navigation framework.
+*   [docs/guides/user-guide.md](docs/guides/user-guide.md) — Walkthrough of the app's wizard flow and screens.
+*   [docs/development/setup.md](docs/development/setup.md) — Environment setup and build instructions.
+*   [docs/deployment/building-and-releasing.md](docs/deployment/building-and-releasing.md) — Packaging and release automation.
+*   [docs/troubleshooting/common-issues.md](docs/troubleshooting/common-issues.md) — Known issues and fixes.
 *   [CHANGELOG.md](CHANGELOG.md) — Chronological history of all features, enhancements, and fixes added to the project.
-*   [RELEASE_NOTES.md](RELEASE_NOTES.md) — Version release metadata, runtime configurations, and download staging files.
+*   [docs/releases/](docs/releases/) — Detailed per-version release notes.
 
 ---
 
@@ -71,31 +74,43 @@ The app covers 10 stations on the Karachi Metro:
 ## Project Structure
 
 ```
-Metro Navigation System/
-├── .github/                    # CI/CD GitHub Actions workflows
-├── Properties/                 # Assembly and settings configuration
-│   └── AssemblyInfo.cs         # Metadata and version numbers
-├── Resources/                  # UI design and background assets
-│   ├── metro map.jpg           # Interactive metro map image
-│   └── *.png / *.jpg           # Form backgrounds and styled buttons
-├── ABOUT.md                    # In-depth architectural & technical specs
-├── CHANGELOG.md                # Detailed version changelog
-├── Choices.cs                  # Main menu/options selection screen
-├── Credits.cs                  # Developer credits & project roles screen
-├── FormNavigator.cs            # WinForms navigation helper utility
-├── LICENSE                     # MIT license terms
-├── Map.cs                      # Metro map and station marker visualizer
-├── Metro App.csproj            # C# MSBuild project file
-├── MetroNetwork.cs             # Graph representation & Dijkstra pathfinding
-├── Program.cs                  # WinForms application entry point
-├── README.md                   # Getting started and project overview
-├── RELEASE_NOTES.md            # Release details & runtime configuration
-├── ReceiptGeneration.cs        # Trip receipt generator and screen
-├── Shortest Path.cs            # Route calculator and path finder UI
-├── SoundHelper.cs              # Sound effect and click audio helper
-├── Stations.cs                 # Interactive station browser
-├── TripHistoryService.cs       # Trip logger and receipts builder
-└── package-release.ps1         # PowerShell script to package zip releases
+metro-navigation-system/
+├── .github/                     # CI/CD workflows, issue/PR templates, CODEOWNERS
+├── docs/                        # Architecture, guides, deployment, and troubleshooting docs
+│   ├── architecture/            # System design and algorithm details
+│   ├── deployment/              # Build and release process
+│   ├── development/             # Environment setup
+│   ├── guides/                  # End-user walkthrough
+│   ├── releases/                 # Per-version release notes
+│   └── troubleshooting/         # Known issues and fixes
+├── scripts/                     # Release packaging automation
+│   └── package-release.ps1
+├── src/
+│   └── MetroApp/                 # All application source
+│       ├── Metro App.csproj     # C# MSBuild project file
+│       ├── Properties/          # Assembly and settings configuration
+│       ├── Resources/           # UI backgrounds, icons, and button assets
+│       ├── lib/                  # Vendored reference assemblies
+│       ├── Choices.cs           # Main menu/options selection screen
+│       ├── Credits.cs           # Developer credits & project roles screen
+│       ├── FormNavigator.cs     # WinForms navigation helper utility
+│       ├── Map.cs               # Metro map and station marker visualizer
+│       ├── MetroNetwork.cs      # Graph representation & Dijkstra pathfinding
+│       ├── Program.cs           # WinForms application entry point
+│       ├── ReceiptGeneration.cs # Trip receipt generator and screen
+│       ├── Shortest Path.cs     # Route calculator and path finder UI
+│       ├── SoundHelper.cs       # Sound effect and click audio helper
+│       ├── Stations.cs          # Interactive station browser
+│       └── TripHistoryService.cs # Trip logger and receipts builder
+├── tests/                        # Test placeholder and guidance (see tests/README.md)
+├── CHANGELOG.md                 # Detailed version changelog
+├── CONTRIBUTING.md              # Contribution guidelines
+├── LICENSE                      # MIT license terms
+├── README.md                    # Getting started and project overview
+├── RELEASE.md                   # Release process
+├── SECURITY.md                  # Security policy
+├── SUPPORT.md                   # Support channels
+└── CODE_OF_CONDUCT.md           # Community guidelines
 ```
 
 ---
@@ -114,23 +129,27 @@ Metro Navigation System/
    ```bash
    git clone https://github.com/msufiyanpk/metro-navigation-system.git
    ```
-2. Open `Metro App.csproj` in Visual Studio.
+2. Open `src/MetroApp/Metro App.csproj` in Visual Studio.
 3. Build and run (`F5`).
+
+Or build from the command line:
+```bash
+dotnet build "src/MetroApp/Metro App.csproj" -c Release
+```
 
 The application saves travel history to:
 ```
 <app directory>/Metro App Travel History/
 ```
 
+See [docs/development/setup.md](docs/development/setup.md) for full setup details.
+
 ---
 
 ## CI / CD
 
-GitHub Actions workflows validate the build on every push:
-
-- **Build Validation** — restores and builds the WinForms project via MSBuild.
-
-Both workflows run on `windows-latest`.
+- [`.github/workflows/ci.yml`](.github/workflows/ci.yml) — restores and builds the WinForms project via MSBuild on every push and pull request to `main`.
+- [`.github/workflows/release.yml`](.github/workflows/release.yml) — on a pushed `v*` tag, builds, packages, and publishes a GitHub Release. See [RELEASE.md](RELEASE.md).
 
 ---
 
