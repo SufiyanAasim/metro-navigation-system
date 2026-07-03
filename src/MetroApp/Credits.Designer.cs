@@ -84,7 +84,7 @@ namespace Metro_App
             this.devNameLabel.Name = "devNameLabel";
             this.devNameLabel.Size = new System.Drawing.Size(229, 38);
             this.devNameLabel.TabIndex = 0;
-            this.devNameLabel.Text = "M Sufiyan Aasim";
+            this.devNameLabel.Text = "Mohammad Sufiyan Aasim";
             // 
             // roleLabel
             // 

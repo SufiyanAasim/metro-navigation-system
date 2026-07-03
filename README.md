@@ -163,4 +163,4 @@ Developed by **Mohammad Sufiyan Aasim** (Software Engineer, UI Designer & System
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE) © 2026 M Sufiyan Aasim ([@msufiyanpk](https://github.com/msufiyanpk)).
+This project is licensed under the [MIT License](LICENSE) © 2026 Mohammad Sufiyan Aasim ([@msufiyanpk](https://github.com/msufiyanpk)).

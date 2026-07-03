@@ -8,4 +8,4 @@
 
 ## Contact
 
-For anything not covered above, reach out to **M Sufiyan Aasim** at [sufiyanaasim@outlook.com](mailto:sufiyanaasim@outlook.com) or via [GitHub](https://github.com/msufiyanpk).
+For anything not covered above, reach out to **Mohammad Sufiyan Aasim** at [sufiyanaasim@outlook.com](mailto:sufiyanaasim@outlook.com) or via [GitHub](https://github.com/msufiyanpk).
