@@ -2,7 +2,7 @@
 
 The **Metro Navigation System** is a Windows Forms desktop application built with C# and .NET Framework 4.7.2. It acts as an interactive route planner, map visualizer, and fare/receipt generator for a metropolitan transit network (modeled around stations in Karachi).
 
-All source code lives under [`src/MetroApp`](../../src/MetroApp).
+All source code lives under [`src/MetroApp`](../src/MetroApp).
 
 ## System Overview
 
@@ -16,7 +16,7 @@ graph TD
 
 ## Navigation Framework
 
-Instead of spawning multiple overlapping windows or causing resource leaks, screen transitions are managed by a centralized, lightweight navigation helper: [`FormNavigator.cs`](../../src/MetroApp/FormNavigator.cs).
+Instead of spawning multiple overlapping windows or causing resource leaks, screen transitions are managed by a centralized, lightweight navigation helper: [`FormNavigator.cs`](../src/MetroApp/FormNavigator.cs).
 
 When moving between screens, `FormNavigator.ShowNext(Form currentForm, Form nextForm)` is invoked. It shows the target form and hides the current one, ensuring only one form remains active in the window stack at a time:
 
@@ -35,7 +35,7 @@ The wizard sequence flows: `Welcome` -> `Choices` -> `Metro Map` -> `Stations` -
 
 ## Route Calculation & Graph Theory
 
-Route calculation is modeled as a shortest-path graph problem in [`MetroNetwork.cs`](../../src/MetroApp/MetroNetwork.cs).
+Route calculation is modeled as a shortest-path graph problem in [`MetroNetwork.cs`](../src/MetroApp/MetroNetwork.cs).
 
 ### Graph Data Representation
 
@@ -77,8 +77,8 @@ To compute the optimal path between any start and end station:
 
 ### Trip History Logger (`TripHistoryService`)
 
-[`TripHistoryService.cs`](../../src/MetroApp/TripHistoryService.cs) is a local file persistence engine. When a route is computed, it formats a trip report and appends it to a history log under `Metro App Travel History/` next to the executable. Each entry records the start station, end station, total distance, and timestamp. It also exposes `ReadLatestReceipt()`, which parses the log to populate the receipt generation screen.
+[`TripHistoryService.cs`](../src/MetroApp/TripHistoryService.cs) is a local file persistence engine. When a route is computed, it formats a trip report and appends it to a history log under `Metro App Travel History/` next to the executable. Each entry records the start station, end station, total distance, and timestamp. It also exposes `ReadLatestReceipt()`, which parses the log to populate the receipt generation screen.
 
 ### Sound Feedback (`SoundHelper`)
 
-[`SoundHelper.cs`](../../src/MetroApp/SoundHelper.cs) provides audio feedback using `System.Media.SoundPlayer`, playing a tap sound when buttons or options are selected.
+[`SoundHelper.cs`](../src/MetroApp/SoundHelper.cs) provides audio feedback using `System.Media.SoundPlayer`, playing a tap sound when buttons or options are selected.

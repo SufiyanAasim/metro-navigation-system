@@ -2,10 +2,11 @@
 
 ## Getting help
 
-- **Usage questions** — see the [User Guide](docs/guides/user-guide.md).
-- **Build or setup issues** — see [docs/development/setup.md](docs/development/setup.md) and [docs/troubleshooting/common-issues.md](docs/troubleshooting/common-issues.md).
+- **Usage questions** — see the [Features](README.md#-features) section of the README.
+- **Build or setup issues** — see [docs/development.md](docs/development.md) and [docs/troubleshooting.md](docs/troubleshooting.md).
 - **Bug reports and feature requests** — open an issue using the templates under [.github/ISSUE_TEMPLATE](.github/ISSUE_TEMPLATE).
 
 ## Contact
 
-For anything not covered above, reach out to **Mohammad Sufiyan Aasim** at [sufiyanaasim@outlook.com](mailto:sufiyanaasim@outlook.com) or via [GitHub](https://github.com/msufiyanpk).
+- **Mohammad Sufiyan Aasim** (System Architect · AI/MLOps · Docs) — [sufiyanaasim@outlook.com](mailto:sufiyanaasim@outlook.com) · [GitHub](https://github.com/SufiyanAasim)
+- **Fahad Bin Nasir** (Front-end Development) — [fahadabbasi17025@gmail.com](mailto:fahadabbasi17025@gmail.com) · [GitHub](https://github.com/FahadBinNasir)

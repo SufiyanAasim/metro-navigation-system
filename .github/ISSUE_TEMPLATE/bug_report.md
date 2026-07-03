@@ -22,7 +22,7 @@ If applicable, add screenshots to help explain the problem.
 
 **Environment**
 - OS: [e.g. Windows 11]
-- App version: [e.g. v2.0.0 (Teal)]
+- App version: [e.g. v1.1.5 (Teal)]
 
 **Additional context**
 Anything else relevant, e.g. contents of `Metro App Travel History/` if related to trip logging.

@@ -4,7 +4,7 @@ Thanks for your interest in improving the Metro Navigation System.
 
 ## Getting started
 
-See [docs/development/setup.md](docs/development/setup.md) for environment setup and build instructions.
+See [docs/development.md](docs/development.md) for environment setup and build instructions.
 
 ## Workflow
 
@@ -22,3 +22,8 @@ Follow the existing WinForms conventions in the codebase (designer-generated lay
 ## Reporting bugs and requesting features
 
 Please use the issue templates under [.github/ISSUE_TEMPLATE](.github/ISSUE_TEMPLATE).
+
+## Maintainers
+
+- **Mohammad Sufiyan Aasim** — System Architect · AI/MLOps · Docs — [@SufiyanAasim](https://github.com/SufiyanAasim)
+- **Fahad Bin Nasir** — Front-end Development — [@FahadBinNasir](https://github.com/FahadBinNasir)

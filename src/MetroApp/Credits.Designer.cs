@@ -27,6 +27,8 @@ namespace Metro_App
             this.githubTagLabel = new System.Windows.Forms.Label();
             this.githubLinkLabel = new System.Windows.Forms.LinkLabel();
             this.versionLabel = new System.Windows.Forms.Label();
+            this.contributorTagLabel = new System.Windows.Forms.Label();
+            this.contributorLinkLabel = new System.Windows.Forms.LinkLabel();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.cardPanel.SuspendLayout();
@@ -148,7 +150,7 @@ namespace Metro_App
             this.githubLinkLabel.Size = new System.Drawing.Size(117, 25);
             this.githubLinkLabel.TabIndex = 5;
             this.githubLinkLabel.TabStop = true;
-            this.githubLinkLabel.Text = "msufiyanpk";
+            this.githubLinkLabel.Text = "SufiyanAasim";
             this.githubLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkGithub_LinkClicked);
             // 
             // versionLabel
@@ -162,7 +164,34 @@ namespace Metro_App
             this.versionLabel.Size = new System.Drawing.Size(127, 20);
             this.versionLabel.TabIndex = 6;
             this.versionLabel.Text = "App Version: 2.0.0";
-            // 
+            //
+            // contributorTagLabel
+            //
+            this.contributorTagLabel.AutoSize = true;
+            this.contributorTagLabel.BackColor = System.Drawing.Color.Transparent;
+            this.contributorTagLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contributorTagLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.contributorTagLabel.Location = new System.Drawing.Point(139, 412);
+            this.contributorTagLabel.Name = "contributorTagLabel";
+            this.contributorTagLabel.Size = new System.Drawing.Size(160, 21);
+            this.contributorTagLabel.TabIndex = 5;
+            this.contributorTagLabel.Text = "Front-end Development:";
+            //
+            // contributorLinkLabel
+            //
+            this.contributorLinkLabel.AutoSize = true;
+            this.contributorLinkLabel.BackColor = System.Drawing.Color.Transparent;
+            this.contributorLinkLabel.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contributorLinkLabel.ForeColor = System.Drawing.Color.White;
+            this.contributorLinkLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.contributorLinkLabel.Location = new System.Drawing.Point(139, 434);
+            this.contributorLinkLabel.Name = "contributorLinkLabel";
+            this.contributorLinkLabel.Size = new System.Drawing.Size(260, 21);
+            this.contributorLinkLabel.TabIndex = 6;
+            this.contributorLinkLabel.TabStop = true;
+            this.contributorLinkLabel.Text = "Fahad Bin Nasir (fahadabbasi17025@gmail.com)";
+            this.contributorLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkContributorEmail_LinkClicked);
+            //
             // buttonBack
             // 
             this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -208,6 +237,8 @@ namespace Metro_App
             this.ClientSize = new System.Drawing.Size(778, 549);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonBack);
+            this.Controls.Add(this.contributorLinkLabel);
+            this.Controls.Add(this.contributorTagLabel);
             this.Controls.Add(this.cardPanel);
             this.Controls.Add(this.subtitleLabel);
             this.Controls.Add(this.titleLabel);
@@ -234,6 +265,8 @@ namespace Metro_App
         private System.Windows.Forms.Label githubTagLabel;
         private System.Windows.Forms.LinkLabel githubLinkLabel;
         private System.Windows.Forms.Label versionLabel;
+        private System.Windows.Forms.Label contributorTagLabel;
+        private System.Windows.Forms.LinkLabel contributorLinkLabel;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonNext;
     }

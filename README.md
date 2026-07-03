@@ -1,60 +1,171 @@
+<div align="center">
+
+<img src="src/MetroApp/Resources/metro_app_icon.png" alt="Metro Navigation System Logo" width="110" />
+
 # Metro Navigation System
 
-A Windows desktop application for navigating the Karachi Metro network. Built with C# and Windows Forms (.NET Framework 4.7.2), it calculates the shortest route between any two stations using Dijkstra's algorithm, highlights routes interactively, and generates printable trip receipts.
+**A Windows desktop route planner for the Karachi Metro network**
+
+[![.NET Framework](https://img.shields.io/badge/.NET%20Framework-4.7.2-512BD4?style=flat&logo=dotnet&logoColor=white)](docs/development.md)
+[![Version](https://img.shields.io/badge/version-1.1.5%20Teal-0d9488?style=flat)](docs/releases/v1.1.5.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-22c55e?style=flat)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Windows-64748b?style=flat)]()
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-0ea5e9?style=flat)](CONTRIBUTING.md)
+
+Calculates the shortest route between any two stations with Dijkstra's algorithm, highlights it interactively on the map, and prints a trip receipt — all offline, no installer, no accounts.
+
+[**Download .exe**](docs/releases/v1.1.5.md) · [**Changelog**](CHANGELOG.md) · [**Release Process**](RELEASE.md) · [**Report a Bug**](.github/ISSUE_TEMPLATE/bug_report.md)
+
+</div>
 
 ---
 
-## Releases
+## ✨ Features
 
-### [v2.0.0] - 2026-06-27 ("Teal")
-The latest release of the application featuring:
-- **Premium Custom Message Boxes**: Replaced the standard gray OS dialog popups with a beautiful, dark-themed `CustomMessageBox` that matches the dark aesthetics of the application.
-- **Interactive & Polished Options Screen**: Shifted option buttons and description texts slightly to the left to completely prevent text clipping on standard resolutions. Description labels are now interactive with a Hand cursor and can be clicked directly to open the respective screens.
-- **Equidistant Control Layouts**: Repositioned Yes/No buttons on the receipt screen to be perfectly equidistant from each other and both left and right screen borders.
-- **Custom Destination Select Buttons**: Replaced standard dropdown combo boxes on the Shortest Path screen with flat styled Sky Blue and Amber selection buttons that spawn custom dark-themed dropdown menus, displaying choices on bold white map overlays.
-- **Printable Receipt Screen Updates**: Integrated a flat vector-style Print button that appears when "Yes" is clicked. The Yes/No buttons and query text hide automatically to present the clean ticket. Clicking "No" returns the user to the Options screen.
-- **Swapped Screen Layout & Wizard Flow**: Re-ordered choices so "Metro Map" appears first (top) and "Stations" appears second. Updated Back/Next transitions to match this flow sequentially.
-- **Stations Page Cleanup**: Removed the redundant stations dropdown selection menu, keeping only the "Show Stations on Map" toggle button. Clicking a station pin on the map shows a message box displaying the station name.
-- **Software Engineer Title**: Updated the developer role designation in credits from "Lead Developer" to "Software Engineer".
+### 🧭 Shortest Path Finder
+- Dijkstra's algorithm over a 10-station weighted graph
+- Custom Sky Blue / Amber destination-select buttons with dropdown station pickers
+- Highlights the computed route and total distance directly on the map
 
-### [v1.1.5] - 2026-06-26 ("Neon")
-The latest release of the application featuring:
-- **Visual & Transparency Fixes**: Parented controls dynamically on maps to fix rounded transparent border outlines.
-- **Redesigned Welcome & Developer Screens**: Cleaned up the landing screen with visual alignment and a new Exit button; removed/hid redundant wizard navigation paths on Credits.
-- **Equidistant Button Layout**: Synchronized all general buttons to `120 x 40` dimensions with a clean `20` pixel margin.
-- **Corrected Map Coordinates**: Fixed map markers coordinates mapping switches in Stations selection changed logic.
-- **Changelog & Technical Specs**: Added in-depth [Changelog](CHANGELOG.md) and technical [architecture documentation](docs/architecture/overview.md).
+### 🗺️ Interactive Metro Map
+- Full visual map of the Karachi Metro network
+- Clickable station pins that pop up the station's full name
 
-### [v1.0.0] - 2026-06-21 ("Crimson")
-The Crimson release featuring the Dijkstra path calculation backend, interactive metro map viewing, travel history logging, dropdown station browsers, and trip receipt printing.
+### 🧾 Trip Receipts
+- Dedicated printable receipt flow with a custom Print button
+- Auto-saves every trip (start, end, distance, timestamp) to a local history log
+
+### 🚉 Station Browser
+- Browse all 10 stations with a toggleable "Show Stations on Map" overlay
+
+### 🎨 Custom UI
+- Dark-themed `CustomMessageBox` replacing standard Windows dialogs
+- Equidistant, DPI-aware layouts across every screen
 
 ---
 
-## Features
+## 🏗️ Architecture
 
-- **Shortest Path Finder** — select any two stations and get the optimal route with total distance.
-- **Interactive Metro Map** — visual map of the Karachi Metro network.
-- **Trip Receipt Generation** — auto-generates and saves a receipt for every trip, with options to return to the main menu.
-- **Travel History** — persists all trips locally with date, time, and route details.
-- **Station Browser** — browse all stations on the network, with an interactive dropdown selection that highlights and checks station markers directly on the map.
+```
+┌──────────────────────────────────────────────────────────┐
+│                      WinForms UI                          │
+│   Welcome → Choices → Map → Stations → ShortestPath →      │
+│                        Receipt                             │
+└───────┬───────────────┬──────────────┬─────────────────────┘
+        │               │              │
+        ▼               ▼              ▼
+ FormNavigator     SoundHelper    MetroNetwork
+ (screen swap)    (tap feedback)  (Dijkstra engine)
+                                        │
+                                        ▼
+                                TripHistoryService
+                                (local text-file log)
+```
+
+Full breakdown in [docs/architecture.md](docs/architecture.md).
 
 ---
 
-## Documentation
+## 🛠️ Technology Stack
 
-*   [docs/architecture/overview.md](docs/architecture/overview.md) — Technical details of Dijkstra's algorithm, graph representation (adjacency matrix), and the form-navigation framework.
-*   [docs/guides/user-guide.md](docs/guides/user-guide.md) — Walkthrough of the app's wizard flow and screens.
-*   [docs/development/setup.md](docs/development/setup.md) — Environment setup and build instructions.
-*   [docs/deployment/building-and-releasing.md](docs/deployment/building-and-releasing.md) — Packaging and release automation.
-*   [docs/troubleshooting/common-issues.md](docs/troubleshooting/common-issues.md) — Known issues and fixes.
-*   [CHANGELOG.md](CHANGELOG.md) — Chronological history of all features, enhancements, and fixes added to the project.
-*   [docs/releases/](docs/releases/) — Detailed per-version release notes.
+### NuGet packages
+
+| Package | Purpose |
+|---------|---------|
+| [System.Resources.Extensions](https://www.nuget.org/packages/System.Resources.Extensions) | Non-string embedded resource (de)serialization |
+
+### Vendored reference assemblies (`src/MetroApp/lib/`)
+
+| Assembly | Purpose |
+|----------|---------|
+| System.Buffers, System.Memory, System.Numerics.Vectors, System.Runtime.CompilerServices.Unsafe | Compatibility shims required by `System.Resources.Extensions` on .NET Framework 4.7.2 |
+
+### .NET Framework (no install needed)
+
+| Namespace | Purpose |
+|-----------|---------|
+| `System.Windows.Forms` | GUI framework — forms, controls, dialogs |
+| `System.Drawing` | Graphics, icons, and image rendering |
+| `System.IO` | Trip history file persistence |
+| `System.Reflection` | Dynamic assembly-version binding on the Credits screen |
+| `System` (`Console.Beep`) | Tap sound feedback |
 
 ---
 
-## Metro Network
+## 🚀 Getting Started
 
-The app covers 10 stations on the Karachi Metro:
+### Requirements
+- Windows OS
+- Visual Studio 2019 or later (or the .NET Framework 4.7.2 targeting pack for CLI builds)
+
+### Clone and run
+
+```bash
+git clone https://github.com/msufiyanpk/metro-navigation-system.git
+cd metro-navigation-system
+```
+
+Open `src/MetroApp/Metro App.csproj` in Visual Studio and build/run (`F5`), or build from the command line:
+
+```bash
+dotnet build "src/MetroApp/Metro App.csproj" -c Release
+```
+
+Or download a packaged build from [docs/releases/v1.1.5.md](docs/releases/v1.1.5.md).
+
+The app saves travel history to `<app directory>/Metro App Travel History/`. Full setup details in [docs/development.md](docs/development.md).
+
+---
+
+## 🗂️ Project Structure
+
+```
+metro-navigation-system/
+├── .github/                # CI/CD workflows, issue/PR templates, CODEOWNERS
+├── docs/
+│   ├── architecture.md
+│   ├── deployment.md
+│   ├── development.md
+│   ├── api.md
+│   ├── database.md
+│   ├── authentication.md
+│   ├── troubleshooting.md
+│   └── releases/            # Per-version release notes
+├── scripts/
+│   └── package-release.ps1
+├── src/
+│   └── MetroApp/
+│       ├── Metro App.csproj
+│       ├── Properties/      # Assembly and settings configuration
+│       ├── Resources/       # UI backgrounds, icons, and button assets
+│       ├── lib/              # Vendored reference assemblies
+│       ├── Choices.cs
+│       ├── Credits.cs
+│       ├── FormNavigator.cs
+│       ├── Map.cs
+│       ├── MetroNetwork.cs
+│       ├── Program.cs
+│       ├── ReceiptGeneration.cs
+│       ├── Shortest Path.cs
+│       ├── SoundHelper.cs
+│       ├── Stations.cs
+│       └── TripHistoryService.cs
+├── tests/                    # Test placeholder and guidance
+├── CHANGELOG.md
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── README.md
+├── RELEASE.md
+├── SECURITY.md
+└── SUPPORT.md
+```
+
+---
+
+## 🚉 Metro Network
+
+The app models 10 stations on the Karachi Metro:
 
 | # | Station |
 |---|---------|
@@ -71,96 +182,63 @@ The app covers 10 stations on the Karachi Metro:
 
 ---
 
-## Project Structure
+## 🧪 Testing
 
-```
-metro-navigation-system/
-├── .github/                     # CI/CD workflows, issue/PR templates, CODEOWNERS
-├── docs/                        # Architecture, guides, deployment, and troubleshooting docs
-│   ├── architecture/            # System design and algorithm details
-│   ├── deployment/              # Build and release process
-│   ├── development/             # Environment setup
-│   ├── guides/                  # End-user walkthrough
-│   ├── releases/                 # Per-version release notes
-│   └── troubleshooting/         # Known issues and fixes
-├── scripts/                     # Release packaging automation
-│   └── package-release.ps1
-├── src/
-│   └── MetroApp/                 # All application source
-│       ├── Metro App.csproj     # C# MSBuild project file
-│       ├── Properties/          # Assembly and settings configuration
-│       ├── Resources/           # UI backgrounds, icons, and button assets
-│       ├── lib/                  # Vendored reference assemblies
-│       ├── Choices.cs           # Main menu/options selection screen
-│       ├── Credits.cs           # Developer credits & project roles screen
-│       ├── FormNavigator.cs     # WinForms navigation helper utility
-│       ├── Map.cs               # Metro map and station marker visualizer
-│       ├── MetroNetwork.cs      # Graph representation & Dijkstra pathfinding
-│       ├── Program.cs           # WinForms application entry point
-│       ├── ReceiptGeneration.cs # Trip receipt generator and screen
-│       ├── Shortest Path.cs     # Route calculator and path finder UI
-│       ├── SoundHelper.cs       # Sound effect and click audio helper
-│       ├── Stations.cs          # Interactive station browser
-│       └── TripHistoryService.cs # Trip logger and receipts builder
-├── tests/                        # Test placeholder and guidance (see tests/README.md)
-├── CHANGELOG.md                 # Detailed version changelog
-├── CONTRIBUTING.md              # Contribution guidelines
-├── LICENSE                      # MIT license terms
-├── README.md                    # Getting started and project overview
-├── RELEASE.md                   # Release process
-├── SECURITY.md                  # Security policy
-├── SUPPORT.md                   # Support channels
-└── CODE_OF_CONDUCT.md           # Community guidelines
-```
+There is no automated test suite yet — the wizard flow is validated manually after each change. See [tests/README.md](tests/README.md) for what's testable and how to add coverage.
 
 ---
 
-## Requirements
+## 📦 Building the Windows Executable
 
-- Windows OS
-- Visual Studio 2019 or later
-- .NET Framework 4.7.2
-
----
-
-## Getting Started
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/msufiyanpk/metro-navigation-system.git
-   ```
-2. Open `src/MetroApp/Metro App.csproj` in Visual Studio.
-3. Build and run (`F5`).
-
-Or build from the command line:
-```bash
-dotnet build "src/MetroApp/Metro App.csproj" -c Release
+```powershell
+./scripts/package-release.ps1 -Version "1.1.5"
 ```
 
-The application saves travel history to:
-```
-<app directory>/Metro App Travel History/
-```
-
-See [docs/development/setup.md](docs/development/setup.md) for full setup details.
+Builds in Release mode and stages `Metro Navigation System.exe` plus its config, runtime DLLs, and docs into `MetroNavigationSystem-v1.1.5.zip`. See [docs/deployment.md](docs/deployment.md).
 
 ---
 
-## CI / CD
+## 🛡️ Security
 
-- [`.github/workflows/ci.yml`](.github/workflows/ci.yml) — restores and builds the WinForms project via MSBuild on every push and pull request to `main`.
-- [`.github/workflows/release.yml`](.github/workflows/release.yml) — on a pushed `v*` tag, builds, packages, and publishes a GitHub Release. See [RELEASE.md](RELEASE.md).
-
----
-
-## Developer Credits
-
-Developed by **Mohammad Sufiyan Aasim** (Software Engineer, UI Designer & System Architect).
-- **Email**: [sufiyanaasim@outlook.com](mailto:sufiyanaasim@outlook.com)
-- **GitHub**: [msufiyanpk](https://github.com/msufiyanpk)
+This is a fully offline, single-user desktop app — no network calls, no accounts, no database (see [docs/authentication.md](docs/authentication.md) and [docs/database.md](docs/database.md)). The only persisted state is a local trip-history text log. See [SECURITY.md](SECURITY.md) to report a vulnerability.
 
 ---
 
-## License
+## 🤝 Contributors
 
-This project is licensed under the [MIT License](LICENSE) © 2026 Mohammad Sufiyan Aasim ([@msufiyanpk](https://github.com/msufiyanpk)).
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/SufiyanAasim">
+        <img src="https://github.com/SufiyanAasim.png" width="72" alt="SufiyanAasim"/><br/>
+        <sub><b>Mohammad Sufiyan Aasim</b></sub>
+      </a><br/>
+      <sub>System Architect · AI/MLOps · Docs</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/FahadBinNasir">
+        <img src="https://github.com/FahadBinNasir.png" width="72" alt="FahadBinNasir"/><br/>
+        <sub><b>Fahad Bin Nasir</b></sub>
+      </a><br/>
+      <sub>Front-end Development</sub>
+    </td>
+  </tr>
+</table>
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) to get involved.
+
+---
+
+## 📄 License
+
+[MIT License](LICENSE) © 2026 Metro Navigation System Contributors.
+
+---
+
+<div align="center">
+
+⭐ **Star this repo if it helped you plan a route.**
+
+[Report Bug](.github/ISSUE_TEMPLATE/bug_report.md) · [Request Feature](.github/ISSUE_TEMPLATE/feature_request.md)
+
+</div>

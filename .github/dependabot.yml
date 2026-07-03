@@ -4,8 +4,14 @@ updates:
     directory: "/src/MetroApp"
     schedule:
       interval: "monthly"
+    reviewers:
+      - "SufiyanAasim"
+      - "FahadBinNasir"
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "monthly"
+    reviewers:
+      - "SufiyanAasim"
+      - "FahadBinNasir"

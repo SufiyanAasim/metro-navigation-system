@@ -60,11 +60,23 @@ namespace Metro_App
         {
             try
             {
-                System.Diagnostics.Process.Start("https://github.com/msufiyanpk");
+                System.Diagnostics.Process.Start("https://github.com/SufiyanAasim");
             }
             catch (Exception ex)
             {
                 CustomMessageBox.Show("Unable to open web browser: " + ex.Message, "Error");
+            }
+        }
+
+        private void linkContributorEmail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("mailto:fahadabbasi17025@gmail.com");
+            }
+            catch (Exception ex)
+            {
+                CustomMessageBox.Show("Unable to open mail client: " + ex.Message, "Error");
             }
         }
     }

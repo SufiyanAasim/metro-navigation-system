@@ -2,7 +2,7 @@
 
 ## Build fails with "assembly not found" for System.Buffers / System.Memory / etc.
 
-These are vendored reference assemblies checked into [`src/MetroApp/lib/`](../../src/MetroApp/lib) and wired up via `HintPath` in the `.csproj`. If the build can't find them, confirm the DLLs are present in `src/MetroApp/lib/` and that you're building `src/MetroApp/Metro App.csproj` (not an older copy of the project file).
+These are vendored reference assemblies checked into [`src/MetroApp/lib/`](../src/MetroApp/lib) and wired up via `HintPath` in the `.csproj`. If the build can't find them, confirm the DLLs are present in `src/MetroApp/lib/` and that you're building `src/MetroApp/Metro App.csproj` (not an older copy of the project file).
 
 ## Travel history file locked or app appears to hang on exit
 

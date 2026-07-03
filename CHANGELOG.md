@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v2.0.0] - 2026-06-27 ("Teal")
+## [v1.1.5] - 2026-06-27 ("Teal")
 
 ### Added
 - **Premium Custom Message Boxes**: Created `CustomMessageBox.cs` to show a beautiful, dark-themed, and modern looking modal dialog matching the app design system.
@@ -21,11 +21,24 @@ All notable changes to this project will be documented in this file.
 ### Removed
 - **Stations Dropdown Menu**: Removed the dropdown selection combobox (`comboBox1`) and associated event handlers from the `Stations` page.
 
-## [v1.1.5] - 2026-06-26 ("Neon")
+## [v1.1.0] - 2026-06-21 ("Crimson")
+
+### Added
+- **Shortest Path Calculation**: Leveraged Dijkstra's algorithm to compute the optimal path between metro stations.
+- **Karachi Metro Visual Map**: Responsive map interface with active checkboxes/pins representing station selections.
+- **Trip receipt & History Logging**: Auto-logging trip receipts (date, distance, route) in a local `Metro App Travel History/` directory.
+- **Interactive Options Panel**: Selection controls for map viewing, shortest route, station search, and developer credits.
+- **Tap Sound FX**: Play audio feedback tap sound upon buttons clicking.
+- **App Icon**: Finalized application icon configuration.
+- **MIT License**: The project is now properly licensed and attributed.
+- **CI/CD**: GitHub Actions workflows validate the build on every push.
+- **PowerShell packaging script**: Included script `package-release.ps1` to stage and zip release assemblies.
+
+## [v1.0.5] - 2026-06-26 ("Neon")
 
 ### Added
 - Flat, transparent **Exit Button** on the Welcome screen.
-- **Dynamic Assembly Version Binding**: The Credits screen now reads version info directly from the assembly (`1.1.5`).
+- **Dynamic Assembly Version Binding**: The Credits screen now reads version info directly from the assembly.
 - **Smart User Redirection routing**: Passed `cameFromChoices` context flags to screen constructors to support conditional Back button routing (returning to Choices screen when opened directly, or returning to the previous wizard step when in the sequential loop).
 
 ### Changed
@@ -34,7 +47,7 @@ All notable changes to this project will be documented in this file.
 - **DPI Layout Scaling Fix**: Moved programmatic control coordinates out of constructors and into designer configurations to allow correct WinForms AutoScale scaling on high-DPI displays.
 - **Fixed Dialog Sizing**: Set `FormBorderStyle = FormBorderStyle.FixedDialog` and disabled the Maximize button on all forms to prevent stretching and misalignment on larger screens.
 - **Corrected Stations Map Markers**: Rewrote the switch selection changed mappings in `Stations.cs` to highlight the exact physical station marker on the map.
-- **High-Contrast Text**: Changed Choices description labels to white, bold Segoe UI text for high visibility against the dark neon background.
+- **High-Contrast Text**: Changed Choices description labels to white, bold Segoe UI text for high visibility against the dark background.
 - **Wizard Endpoint**: Removed the Next button from the Receipt Generation screen and hid the Next button on the Credits screen, ending the wizard loop at Receipt Generation.
 - **Credits Back Button Alignment**: Relocated the Credits screen Back button to the bottom-left `(60, 500)` to match other screens, routing it directly back to the main Options screen.
 
@@ -46,13 +59,13 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## [v1.0.0] - 2026-06-21 ("Crimson")
+## [v1.0.0] - 2026-06-21 ("Magenta") — Pre-release
 
 ### Added
-- **Shortest Path Calculation**: Leveraged Dijkstra's algorithm to compute the optimal path between metro stations.
-- **Karachi Metro Visual Map**: Responsive map interface with active checkboxes/pins representing station selections.
-- **Trip receipt & History Logging**: Auto-logging trip receipts (date, distance, route) in a local `Metro App Travel History/` directory.
-- **Interactive Options Panel**: Selection controls for map viewing, shortest route, station search, and developer credits.
-- **Tap Sound FX**: Play audio feedback tap sound upon buttons clicking.
-- **App Icon**: Added initial application icon configuration.
-- **PowerShell packaging script**: Included script `package-release.ps1` to stage and zip release assemblies.
+- **Dijkstra Shortest Path Engine**: Initial graph/adjacency-matrix implementation.
+- **Core Wizard Screens**: Welcome, Choices, Metro Map, Stations, Shortest Path, and Receipt Generation, with basic navigation.
+- **Trip Receipt & History Logging**: First pass at local text-file trip logging.
+- **Tap Sound FX**: Basic audio feedback on button clicks.
+- **Initial App Icon**.
+
+This was the first public preview build — unlicensed, unpolished, and without CI. See [docs/releases/v1.0.0.md](docs/releases/v1.0.0.md).

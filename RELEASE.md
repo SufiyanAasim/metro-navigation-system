@@ -6,10 +6,10 @@
 4. Commit the changelog/docs update.
 5. Tag the release and push the tag:
    ```bash
-   git tag v2.1.0
-   git push origin v2.1.0
+   git tag v1.2.0
+   git push origin v1.2.0
    ```
 6. Pushing a `v*` tag triggers [`.github/workflows/release.yml`](.github/workflows/release.yml), which builds the app, packages it via [`scripts/package-release.ps1`](scripts/package-release.ps1), and publishes a GitHub Release with the ZIP attached and `CHANGELOG.md` as the release body.
 7. Verify the published release and download the asset to sanity-check it.
 
-See [docs/deployment/building-and-releasing.md](docs/deployment/building-and-releasing.md) for details on manual packaging.
+See [docs/deployment.md](docs/deployment.md) for details on manual packaging.

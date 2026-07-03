@@ -15,7 +15,7 @@ cd metro-navigation-system
 
 ## Opening in Visual Studio
 
-Open [`src/MetroApp/Metro App.csproj`](../../src/MetroApp/Metro%20App.csproj) directly — there is no solution file. Build and run with `F5`.
+Open [`src/MetroApp/Metro App.csproj`](../src/MetroApp/Metro%20App.csproj) directly — there is no solution file. Build and run with `F5`.
 
 ## Building from the command line
 
@@ -29,7 +29,7 @@ The compiled executable is written to `src/MetroApp/bin/Release/Metro Navigation
 
 - `src/MetroApp/` — all application source (forms, business logic, embedded resources, and the `.csproj`)
 - `src/MetroApp/lib/` — vendored reference assemblies used via `HintPath` (`System.Buffers`, `System.Memory`, etc.)
-- `scripts/` — release packaging automation (see [deployment docs](../deployment/building-and-releasing.md))
+- `scripts/` — release packaging automation (see [deployment docs](deployment.md))
 
 ## Runtime data
 
