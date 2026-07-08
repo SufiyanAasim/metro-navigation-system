@@ -1,12 +1,23 @@
 # Support
 
+## Documentation
+
+- [README](README.md) — project overview, features, and quick start.
+- [docs/Development.md](docs/Development.md) — running from source, building the executable, and contributing.
+- [docs/Troubleshooting.md](docs/Troubleshooting.md) — common issues and fixes.
+- [docs/Architecture.md](docs/Architecture.md) — codebase structure and module responsibilities.
+- [CHANGELOG.md](CHANGELOG.md) — full versioned change history.
+
 ## Getting help
 
-- **Usage questions** — see the [Features](README.md#-features) section of the README.
-- **Build or setup issues** — see [docs/development.md](docs/development.md) and [docs/troubleshooting.md](docs/troubleshooting.md).
-- **Bug reports and feature requests** — open an issue using the templates under [.github/ISSUE_TEMPLATE](.github/ISSUE_TEMPLATE).
+**For bugs:** open a [Bug Report issue](.github/ISSUE_TEMPLATE/bug_report.md).
 
-## Contact
+**For feature requests:** open a [Feature Request issue](.github/ISSUE_TEMPLATE/feature_request.md).
 
-- **Mohammad Sufiyan Aasim** (System Architect · AI/MLOps · Docs) — [sufiyanaasim@outlook.com](mailto:sufiyanaasim@outlook.com) · [GitHub](https://github.com/SufiyanAasim)
-- **Fahad Bin Nasir** (Front-end Development) — [fahadabbasi17025@gmail.com](mailto:fahadabbasi17025@gmail.com) · [GitHub](https://github.com/FahadBinNasir)
+**For questions:** email **sufiyanaasim@outlook.com**.
+
+**For security vulnerabilities:** see [SECURITY.md](SECURITY.md) — do not open a public issue.
+
+## Response time
+
+This is a personal open-source project maintained by a small team. Response times are best-effort, typically within a few days for bugs and a week for feature discussions.

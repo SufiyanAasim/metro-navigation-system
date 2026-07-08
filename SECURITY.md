@@ -1,24 +1,31 @@
 # Security Policy
 
-## Supported Versions
-
-Only the latest released version is actively supported with security fixes.
+## Supported versions
 
 | Version | Supported |
 |---------|-----------|
-| 1.1.x   | Yes |
-| < 1.1   | No  |
+| 1.1.x   | Yes       |
+| 1.0.x   | No        |
 
-## Reporting a Vulnerability
+## Reporting a vulnerability
 
-This is a small desktop application with no network services or remote data handling — it reads/writes local files only (trip history under `Metro App Travel History/`). See [docs/authentication.md](docs/authentication.md) and [docs/database.md](docs/database.md) for the app's full trust model. If you find a security issue anyway (e.g. unsafe file handling, path traversal in the receipt/history logger), please report it privately rather than opening a public issue, by emailing:
+**Do not open a public GitHub issue for security vulnerabilities.**
 
-- **Mohammad Sufiyan Aasim** — [sufiyanaasim@outlook.com](mailto:sufiyanaasim@outlook.com)
-- **Fahad Bin Nasir** — [fahadabbasi17025@gmail.com](mailto:fahadabbasi17025@gmail.com)
+Report vulnerabilities privately by emailing:
 
-Please include:
-- A description of the issue and its potential impact
-- Steps to reproduce
-- Affected version
+**sufiyanaasim@outlook.com**
 
-We'll acknowledge reports within a few days.
+Include in your report:
+- A clear description of the vulnerability.
+- Steps to reproduce or a proof-of-concept.
+- The potential impact.
+- Your suggested fix, if any.
+
+You will receive a response within 7 days. If the vulnerability is confirmed, a patch will be released as a priority and you will be credited in the release notes unless you prefer to remain anonymous.
+
+## Security model
+
+- The application has no accounts, no authentication, and no network layer — see [docs/Architecture.md](docs/Architecture.md) for the full trust model.
+- All persisted data is local, flat-text trip history under `Metro App Travel History/` — see [docs/Database.md](docs/Database.md).
+- No credentials or secrets are ever written to disk.
+- The application stores all data locally. No data is transmitted over a network in the current release.

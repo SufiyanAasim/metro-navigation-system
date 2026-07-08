@@ -6,7 +6,7 @@
 
 **A Windows desktop route planner for the Karachi Metro network**
 
-[![.NET Framework](https://img.shields.io/badge/.NET%20Framework-4.7.2-512BD4?style=flat&logo=dotnet&logoColor=white)](docs/development.md)
+[![.NET Framework](https://img.shields.io/badge/.NET%20Framework-4.7.2-512BD4?style=flat&logo=dotnet&logoColor=white)](docs/Development.md)
 [![Version](https://img.shields.io/badge/version-1.1.5%20Teal-0d9488?style=flat)](docs/releases/v1.1.5.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-22c55e?style=flat)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows-64748b?style=flat)]()
@@ -14,7 +14,7 @@
 
 Calculates the shortest route between any two stations with Dijkstra's algorithm, highlights it interactively on the map, and prints a trip receipt — all offline, no installer, no accounts.
 
-[**Download .exe**](docs/releases/v1.1.5.md) · [**Changelog**](CHANGELOG.md) · [**Release Process**](RELEASE.md) · [**Report a Bug**](.github/ISSUE_TEMPLATE/bug_report.md)
+[**Download .exe**](docs/releases/v1.1.5.md) · [**Changelog**](CHANGELOG.md) · [**Roadmap**](ROADMAP.md) · [**Report a Bug**](.github/ISSUE_TEMPLATE/bug_report.md)
 
 </div>
 
@@ -62,7 +62,7 @@ Calculates the shortest route between any two stations with Dijkstra's algorithm
                                 (local text-file log)
 ```
 
-Full breakdown in [docs/architecture.md](docs/architecture.md).
+Full breakdown in [docs/Architecture.md](docs/Architecture.md).
 
 ---
 
@@ -101,7 +101,7 @@ Full breakdown in [docs/architecture.md](docs/architecture.md).
 ### Clone and run
 
 ```bash
-git clone https://github.com/msufiyanpk/metro-navigation-system.git
+git clone https://github.com/SufiyanAasim/metro-navigation-system.git
 cd metro-navigation-system
 ```
 
@@ -113,7 +113,7 @@ dotnet build "src/MetroApp/Metro App.csproj" -c Release
 
 Or download a packaged build from [docs/releases/v1.1.5.md](docs/releases/v1.1.5.md).
 
-The app saves travel history to `<app directory>/Metro App Travel History/`. Full setup details in [docs/development.md](docs/development.md).
+The app saves travel history to `<app directory>/Metro App Travel History/`. Full setup details in [docs/Development.md](docs/Development.md).
 
 ---
 
@@ -123,13 +123,10 @@ The app saves travel history to `<app directory>/Metro App Travel History/`. Ful
 metro-navigation-system/
 ├── .github/                # CI/CD workflows, issue/PR templates, CODEOWNERS
 ├── docs/
-│   ├── architecture.md
-│   ├── deployment.md
-│   ├── development.md
-│   ├── api.md
-│   ├── database.md
-│   ├── authentication.md
-│   ├── troubleshooting.md
+│   ├── Architecture.md
+│   ├── Database.md
+│   ├── Development.md
+│   ├── Troubleshooting.md
 │   └── releases/            # Per-version release notes
 ├── scripts/
 │   └── package-release.ps1
@@ -157,6 +154,7 @@ metro-navigation-system/
 ├── LICENSE
 ├── README.md
 ├── RELEASE.md
+├── ROADMAP.md
 ├── SECURITY.md
 └── SUPPORT.md
 ```
@@ -194,13 +192,13 @@ There is no automated test suite yet — the wizard flow is validated manually a
 ./scripts/package-release.ps1 -Version "1.1.5"
 ```
 
-Builds in Release mode and stages `Metro Navigation System.exe` plus its config, runtime DLLs, and docs into `MetroNavigationSystem-v1.1.5.zip`. See [docs/deployment.md](docs/deployment.md).
+Builds in Release mode and stages `Metro Navigation System.exe` plus its config, runtime DLLs, and docs into `MetroNavigationSystem-v1.1.5.zip`. See [docs/Development.md](docs/Development.md).
 
 ---
 
 ## 🛡️ Security
 
-This is a fully offline, single-user desktop app — no network calls, no accounts, no database (see [docs/authentication.md](docs/authentication.md) and [docs/database.md](docs/database.md)). The only persisted state is a local trip-history text log. See [SECURITY.md](SECURITY.md) to report a vulnerability.
+This is a fully offline, single-user desktop app — no network calls, no accounts, no database (see [docs/Architecture.md](docs/Architecture.md) and [docs/Database.md](docs/Database.md)). The only persisted state is a local trip-history text log. See [SECURITY.md](SECURITY.md) to report a vulnerability.
 
 ---
 
