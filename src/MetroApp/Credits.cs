@@ -32,6 +32,7 @@ namespace Metro_App
 
             // Dynamically set correct app version from AssemblyInfo (e.g. 1.0.0)
             versionLabel.Text = "App Version: " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString(3);
+            versionLabel.Left = (this.ClientSize.Width - versionLabel.Width) / 2;
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -79,5 +80,18 @@ namespace Metro_App
                 CustomMessageBox.Show("Unable to open mail client: " + ex.Message, "Error");
             }
         }
+
+        private void linkContributorGithub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("https://github.com/FahadBinNasir");
+            }
+            catch (Exception ex)
+            {
+                CustomMessageBox.Show("Unable to open web browser: " + ex.Message, "Error");
+            }
+        }
     }
 }
+

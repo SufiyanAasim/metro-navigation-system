@@ -27,11 +27,17 @@ namespace Metro_App
             this.githubTagLabel = new System.Windows.Forms.Label();
             this.githubLinkLabel = new System.Windows.Forms.LinkLabel();
             this.versionLabel = new System.Windows.Forms.Label();
-            this.contributorTagLabel = new System.Windows.Forms.Label();
-            this.contributorLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.cardPanel2 = new System.Windows.Forms.Panel();
+            this.contribNameLabel = new System.Windows.Forms.Label();
+            this.contribRoleLabel = new System.Windows.Forms.Label();
+            this.contribEmailTagLabel = new System.Windows.Forms.Label();
+            this.contribEmailLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.contribGithubTagLabel = new System.Windows.Forms.Label();
+            this.contribGithubLinkLabel = new System.Windows.Forms.LinkLabel();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.cardPanel.SuspendLayout();
+            this.cardPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -70,33 +76,32 @@ namespace Metro_App
             this.cardPanel.Controls.Add(this.emailLinkLabel);
             this.cardPanel.Controls.Add(this.githubTagLabel);
             this.cardPanel.Controls.Add(this.githubLinkLabel);
-            this.cardPanel.Controls.Add(this.versionLabel);
-            this.cardPanel.Location = new System.Drawing.Point(139, 160);
+            this.cardPanel.Location = new System.Drawing.Point(20, 150);
             this.cardPanel.Name = "cardPanel";
-            this.cardPanel.Size = new System.Drawing.Size(500, 240);
+            this.cardPanel.Size = new System.Drawing.Size(360, 270);
             this.cardPanel.TabIndex = 2;
             // 
             // devNameLabel
             // 
             this.devNameLabel.AutoSize = true;
             this.devNameLabel.BackColor = System.Drawing.Color.Transparent;
-            this.devNameLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.devNameLabel.Font = new System.Drawing.Font("Segoe UI", 13.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.devNameLabel.ForeColor = System.Drawing.Color.White;
-            this.devNameLabel.Location = new System.Drawing.Point(25, 20);
+            this.devNameLabel.Location = new System.Drawing.Point(15, 25);
             this.devNameLabel.Name = "devNameLabel";
-            this.devNameLabel.Size = new System.Drawing.Size(229, 38);
+            this.devNameLabel.Size = new System.Drawing.Size(229, 32);
             this.devNameLabel.TabIndex = 0;
             this.devNameLabel.Text = "Mohammad Sufiyan Aasim";
             // 
             // roleLabel
             // 
-            this.roleLabel.AutoSize = true;
+            this.roleLabel.AutoSize = false;
             this.roleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.roleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
-            this.roleLabel.Location = new System.Drawing.Point(26, 60);
+            this.roleLabel.Location = new System.Drawing.Point(16, 65);
             this.roleLabel.Name = "roleLabel";
-            this.roleLabel.Size = new System.Drawing.Size(262, 23);
+            this.roleLabel.Size = new System.Drawing.Size(330, 45);
             this.roleLabel.TabIndex = 1;
             this.roleLabel.Text = "Software Engineer, UI Designer & System Architect";
             this.roleLabel.UseMnemonic = false;
@@ -105,9 +110,9 @@ namespace Metro_App
             // 
             this.emailTagLabel.AutoSize = true;
             this.emailTagLabel.BackColor = System.Drawing.Color.Transparent;
-            this.emailTagLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailTagLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailTagLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.emailTagLabel.Location = new System.Drawing.Point(25, 105);
+            this.emailTagLabel.Location = new System.Drawing.Point(15, 125);
             this.emailTagLabel.Name = "emailTagLabel";
             this.emailTagLabel.Size = new System.Drawing.Size(64, 25);
             this.emailTagLabel.TabIndex = 2;
@@ -117,9 +122,9 @@ namespace Metro_App
             // 
             this.emailLinkLabel.AutoSize = true;
             this.emailLinkLabel.BackColor = System.Drawing.Color.Transparent;
-            this.emailLinkLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLinkLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailLinkLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
-            this.emailLinkLabel.Location = new System.Drawing.Point(115, 105);
+            this.emailLinkLabel.Location = new System.Drawing.Point(90, 125);
             this.emailLinkLabel.Name = "emailLinkLabel";
             this.emailLinkLabel.Size = new System.Drawing.Size(232, 25);
             this.emailLinkLabel.TabIndex = 3;
@@ -131,9 +136,9 @@ namespace Metro_App
             // 
             this.githubTagLabel.AutoSize = true;
             this.githubTagLabel.BackColor = System.Drawing.Color.Transparent;
-            this.githubTagLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.githubTagLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.githubTagLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.githubTagLabel.Location = new System.Drawing.Point(25, 145);
+            this.githubTagLabel.Location = new System.Drawing.Point(15, 165);
             this.githubTagLabel.Name = "githubTagLabel";
             this.githubTagLabel.Size = new System.Drawing.Size(78, 25);
             this.githubTagLabel.TabIndex = 4;
@@ -143,9 +148,9 @@ namespace Metro_App
             // 
             this.githubLinkLabel.AutoSize = true;
             this.githubLinkLabel.BackColor = System.Drawing.Color.Transparent;
-            this.githubLinkLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.githubLinkLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.githubLinkLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
-            this.githubLinkLabel.Location = new System.Drawing.Point(115, 145);
+            this.githubLinkLabel.Location = new System.Drawing.Point(90, 165);
             this.githubLinkLabel.Name = "githubLinkLabel";
             this.githubLinkLabel.Size = new System.Drawing.Size(117, 25);
             this.githubLinkLabel.TabIndex = 5;
@@ -157,40 +162,105 @@ namespace Metro_App
             // 
             this.versionLabel.AutoSize = true;
             this.versionLabel.BackColor = System.Drawing.Color.Transparent;
-            this.versionLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.versionLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.versionLabel.ForeColor = System.Drawing.Color.Gray;
-            this.versionLabel.Location = new System.Drawing.Point(26, 195);
+            this.versionLabel.Location = new System.Drawing.Point(325, 455);
             this.versionLabel.Name = "versionLabel";
-            this.versionLabel.Size = new System.Drawing.Size(127, 20);
+            this.versionLabel.Size = new System.Drawing.Size(127, 23);
             this.versionLabel.TabIndex = 6;
             this.versionLabel.Text = "App Version: 1.1.5";
-            //
-            // contributorTagLabel
-            //
-            this.contributorTagLabel.AutoSize = true;
-            this.contributorTagLabel.BackColor = System.Drawing.Color.Transparent;
-            this.contributorTagLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contributorTagLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.contributorTagLabel.Location = new System.Drawing.Point(139, 412);
-            this.contributorTagLabel.Name = "contributorTagLabel";
-            this.contributorTagLabel.Size = new System.Drawing.Size(160, 21);
-            this.contributorTagLabel.TabIndex = 5;
-            this.contributorTagLabel.Text = "Front-end Development:";
-            //
-            // contributorLinkLabel
-            //
-            this.contributorLinkLabel.AutoSize = true;
-            this.contributorLinkLabel.BackColor = System.Drawing.Color.Transparent;
-            this.contributorLinkLabel.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contributorLinkLabel.ForeColor = System.Drawing.Color.White;
-            this.contributorLinkLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
-            this.contributorLinkLabel.Location = new System.Drawing.Point(139, 434);
-            this.contributorLinkLabel.Name = "contributorLinkLabel";
-            this.contributorLinkLabel.Size = new System.Drawing.Size(260, 21);
-            this.contributorLinkLabel.TabIndex = 6;
-            this.contributorLinkLabel.TabStop = true;
-            this.contributorLinkLabel.Text = "Fahad Bin Nasir (fahadabbasi17025@gmail.com)";
-            this.contributorLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkContributorEmail_LinkClicked);
+            // 
+            // cardPanel2
+            // 
+            this.cardPanel2.BackColor = System.Drawing.Color.FromArgb(15, 25, 45);
+            this.cardPanel2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cardPanel2.Controls.Add(this.contribNameLabel);
+            this.cardPanel2.Controls.Add(this.contribRoleLabel);
+            this.cardPanel2.Controls.Add(this.contribEmailTagLabel);
+            this.cardPanel2.Controls.Add(this.contribEmailLinkLabel);
+            this.cardPanel2.Controls.Add(this.contribGithubTagLabel);
+            this.cardPanel2.Controls.Add(this.contribGithubLinkLabel);
+            this.cardPanel2.Location = new System.Drawing.Point(398, 150);
+            this.cardPanel2.Name = "cardPanel2";
+            this.cardPanel2.Size = new System.Drawing.Size(360, 270);
+            this.cardPanel2.TabIndex = 7;
+            // 
+            // contribNameLabel
+            // 
+            this.contribNameLabel.AutoSize = true;
+            this.contribNameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.contribNameLabel.Font = new System.Drawing.Font("Segoe UI", 13.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contribNameLabel.ForeColor = System.Drawing.Color.White;
+            this.contribNameLabel.Location = new System.Drawing.Point(15, 25);
+            this.contribNameLabel.Name = "contribNameLabel";
+            this.contribNameLabel.Size = new System.Drawing.Size(200, 32);
+            this.contribNameLabel.TabIndex = 0;
+            this.contribNameLabel.Text = "Fahad Bin Nasir";
+            // 
+            // contribRoleLabel
+            // 
+            this.contribRoleLabel.AutoSize = false;
+            this.contribRoleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.contribRoleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contribRoleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
+            this.contribRoleLabel.Location = new System.Drawing.Point(16, 65);
+            this.contribRoleLabel.Name = "contribRoleLabel";
+            this.contribRoleLabel.Size = new System.Drawing.Size(330, 45);
+            this.contribRoleLabel.TabIndex = 1;
+            this.contribRoleLabel.Text = "Front-end Developer";
+            this.contribRoleLabel.UseMnemonic = false;
+            // 
+            // contribEmailTagLabel
+            // 
+            this.contribEmailTagLabel.AutoSize = true;
+            this.contribEmailTagLabel.BackColor = System.Drawing.Color.Transparent;
+            this.contribEmailTagLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contribEmailTagLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.contribEmailTagLabel.Location = new System.Drawing.Point(15, 125);
+            this.contribEmailTagLabel.Name = "contribEmailTagLabel";
+            this.contribEmailTagLabel.Size = new System.Drawing.Size(64, 25);
+            this.contribEmailTagLabel.TabIndex = 2;
+            this.contribEmailTagLabel.Text = "Email:";
+            // 
+            // contribEmailLinkLabel
+            // 
+            this.contribEmailLinkLabel.AutoSize = true;
+            this.contribEmailLinkLabel.BackColor = System.Drawing.Color.Transparent;
+            this.contribEmailLinkLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contribEmailLinkLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.contribEmailLinkLabel.Location = new System.Drawing.Point(90, 125);
+            this.contribEmailLinkLabel.Name = "contribEmailLinkLabel";
+            this.contribEmailLinkLabel.Size = new System.Drawing.Size(232, 25);
+            this.contribEmailLinkLabel.TabIndex = 3;
+            this.contribEmailLinkLabel.TabStop = true;
+            this.contribEmailLinkLabel.Text = "fahadabbasi17025@gmail.com";
+            this.contribEmailLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkContributorEmail_LinkClicked);
+            // 
+            // contribGithubTagLabel
+            // 
+            this.contribGithubTagLabel.AutoSize = true;
+            this.contribGithubTagLabel.BackColor = System.Drawing.Color.Transparent;
+            this.contribGithubTagLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contribGithubTagLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.contribGithubTagLabel.Location = new System.Drawing.Point(15, 165);
+            this.contribGithubTagLabel.Name = "contribGithubTagLabel";
+            this.contribGithubTagLabel.Size = new System.Drawing.Size(78, 25);
+            this.contribGithubTagLabel.TabIndex = 4;
+            this.contribGithubTagLabel.Text = "GitHub:";
+            // 
+            // contribGithubLinkLabel
+            // 
+            this.contribGithubLinkLabel.AutoSize = true;
+            this.contribGithubLinkLabel.BackColor = System.Drawing.Color.Transparent;
+            this.contribGithubLinkLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contribGithubLinkLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.contribGithubLinkLabel.Location = new System.Drawing.Point(90, 165);
+            this.contribGithubLinkLabel.Name = "contribGithubLinkLabel";
+            this.contribGithubLinkLabel.Size = new System.Drawing.Size(150, 25);
+            this.contribGithubLinkLabel.TabIndex = 5;
+            this.contribGithubLinkLabel.TabStop = true;
+            this.contribGithubLinkLabel.Text = "FahadBinNasir";
+            this.contribGithubLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkContributorGithub_LinkClicked);
             //
             // buttonBack
             // 
@@ -237,9 +307,9 @@ namespace Metro_App
             this.ClientSize = new System.Drawing.Size(778, 549);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonBack);
-            this.Controls.Add(this.contributorLinkLabel);
-            this.Controls.Add(this.contributorTagLabel);
             this.Controls.Add(this.cardPanel);
+            this.Controls.Add(this.cardPanel2);
+            this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.subtitleLabel);
             this.Controls.Add(this.titleLabel);
             this.Name = "Credits";
@@ -248,6 +318,8 @@ namespace Metro_App
             this.Load += new System.EventHandler(this.Credits_Load);
             this.cardPanel.ResumeLayout(false);
             this.cardPanel.PerformLayout();
+            this.cardPanel2.ResumeLayout(false);
+            this.cardPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,8 +337,13 @@ namespace Metro_App
         private System.Windows.Forms.Label githubTagLabel;
         private System.Windows.Forms.LinkLabel githubLinkLabel;
         private System.Windows.Forms.Label versionLabel;
-        private System.Windows.Forms.Label contributorTagLabel;
-        private System.Windows.Forms.LinkLabel contributorLinkLabel;
+        private System.Windows.Forms.Panel cardPanel2;
+        private System.Windows.Forms.Label contribNameLabel;
+        private System.Windows.Forms.Label contribRoleLabel;
+        private System.Windows.Forms.Label contribEmailTagLabel;
+        private System.Windows.Forms.LinkLabel contribEmailLinkLabel;
+        private System.Windows.Forms.Label contribGithubTagLabel;
+        private System.Windows.Forms.LinkLabel contribGithubLinkLabel;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonNext;
     }
