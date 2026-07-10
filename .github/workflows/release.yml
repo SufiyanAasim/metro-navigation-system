@@ -32,11 +32,23 @@ jobs:
           $version = "${{ github.ref_name }}".TrimStart('v')
           ./scripts/package-release.ps1 -Version $version
 
+      - name: Prepare Release Notes
+        shell: pwsh
+        run: |
+          $notesPath = "docs/releases/${{ github.ref_name }}.md"
+          if (Test-Path $notesPath) {
+              Write-Host "Using release notes from $notesPath"
+              Copy-Item $notesPath -Destination "release_notes_temp.md"
+          } else {
+              Write-Host "Release notes file not found, falling back to CHANGELOG.md"
+              Copy-Item "CHANGELOG.md" -Destination "release_notes_temp.md"
+          }
+
       - name: Create GitHub Release and Upload Asset
         uses: softprops/action-gh-release@v2
         with:
           files: MetroNavigationSystem-v*.zip
-          body_path: CHANGELOG.md
+          body_path: release_notes_temp.md
           draft: false
           prerelease: false
         env:
