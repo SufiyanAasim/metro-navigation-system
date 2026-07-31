@@ -202,6 +202,19 @@ This is a fully offline, single-user desktop app — no network calls, no accoun
 
 ---
 
+## 🗓️ Versions
+
+All releases are listed below — **latest on top**. Click a version to view its full release notes.
+
+| Version | Codename | Status |
+|---------|----------|--------|
+| [v1.1.5](docs/releases/v1.1.5.md) | 🩵 Teal | ✅ Released |
+| [v1.1.0](docs/releases/v1.1.0.md) | ❤️ Crimson | ✅ Released |
+| [v1.0.5](docs/releases/v1.0.5.md) | 💚 Neon | ✅ Released |
+| [v1.0.0](docs/releases/v1.0.0.md) | 🩷 Magenta | 🚧 Pre-release |
+
+---
+
 ## 🤝 Contributors
 
 <table>
