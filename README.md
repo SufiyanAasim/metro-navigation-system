@@ -47,8 +47,8 @@ Calculates the shortest route between any two stations with Dijkstra's algorithm
 ## 🏗️ Architecture
 
 ```
-┌──────────────────────────────────────────────────────────┐
-│                      WinForms UI                          │
+┌────────────────────────────────────────────────────────────┐
+│                      WinForms UI                           │
 │   Welcome → Choices → Map → Stations → ShortestPath →      │
 │                        Receipt                             │
 └───────┬───────────────┬──────────────┬─────────────────────┘
